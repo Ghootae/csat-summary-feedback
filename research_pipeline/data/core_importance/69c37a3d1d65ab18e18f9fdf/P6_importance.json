@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P6",
+  "para_order": 6,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "반 퍼슨의 문화 개념 = 인간의 세계 이해 방식(사고) → 삶의 방식(문화)로 드러남",
+      "importance_score": 0.92,
+      "normalized_score": 1.0,
+      "importance_role": "topic_anchor",
+      "reason": "문단의 중심 대상이자 비교축의 핵심 정의로, 이 관계가 빠지면 문단의 역할이 무너짐. 반 퍼슨 문화관의 본질을 집약적으로 제시함."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "문화 형성 = 신화적 사고/존재론적 사고/기능적 사고",
+      "importance_score": 0.83,
+      "normalized_score": 0.902,
+      "importance_role": "main_mechanism",
+      "reason": "반 퍼슨 문화관의 형성 원리(사고 유형 구분)로, 비교축의 핵심 근거이자 문단의 중심 메커니즘을 담당함."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "문화 = 동사적 성격 강조",
+      "importance_score": 0.75,
+      "normalized_score": 0.815,
+      "importance_role": "core_transition",
+      "reason": "반 퍼슨 문화관의 특징(동사적 성격)으로, 화이트와의 대비 및 문화 변화 방식의 차이를 연결하는 핵심 전환점임."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.5,
+    "max_score": 0.92,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

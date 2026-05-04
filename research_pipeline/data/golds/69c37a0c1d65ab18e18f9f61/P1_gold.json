@@ -1,0 +1,45 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "그라피티 = 공공장소 낙서(글자/그림)",
+        "source_items": [
+          "그라피티 = 공공장소에 낙서처럼 그려진 글자나 그림"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "그라피티 기원 → 기존 질서 저항 행위",
+        "source_items": [
+          "그라피티의 기원 = 도시 소외 계층의 기존 질서 저항 행위"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "도시 소외 계층이 건물 벽/지하철 등에서 재빠르게 낙서함",
+        "source_items": [
+          "도시 소외 계층이 건물 벽이나 지하철 등에서 재빠르게 낙서함"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

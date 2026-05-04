@@ -1,0 +1,56 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P4",
+  "para_order": 4,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "슬라이딩 방식 접촉 → 접촉 면적 변화",
+      "importance_score": 0.8,
+      "normalized_score": 0.8889,
+      "importance_role": "main_mechanism",
+      "reason": "슬라이딩 방식에서 전류 발생의 출발점이자, 이후 모든 메커니즘의 전제가 되는 핵심 단계이다. 이 고리가 없으면 이후 전위차 발생, 전류 발생의 설명이 불가능하다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "접촉 면적 변화 → 전위차 발생",
+      "importance_score": 0.85,
+      "normalized_score": 0.9444,
+      "importance_role": "main_mechanism",
+      "reason": "접촉 면적 변화가 전위차를 발생시키는 것은 전류 발생의 직접적 계기이자, 문단의 중심 메커니즘 중 가장 중요한 연결 고리이다. 이 단계가 없으면 전류 발생의 원인 설명이 성립하지 않는다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "전위차 발생 → 전자의 이동(전류 발생)",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "main_effect",
+      "reason": "전위차가 전자의 이동(전류 발생)으로 이어지는 과정은 문단의 결론적 귀결이자, 전체 메커니즘의 최종 효과이다. 이 slot이 없으면 문단의 중심 역할이 무너진다."
+    },
+    {
+      "slot_id": "C4",
+      "core_text": "접촉 면적 증가 → 전류 방향 반전",
+      "importance_score": 0.75,
+      "normalized_score": 0.8333,
+      "importance_role": "core_transition",
+      "reason": "접촉 면적이 다시 늘어날 때 전류 방향이 반전되는 것은 슬라이딩 방식의 특수한 핵심 전환이다. 전류의 방향 변화라는 중요한 추가 정보를 제공하지만, 전류 발생 자체의 필수 고리보다는 약간 보조적이다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 3.3,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

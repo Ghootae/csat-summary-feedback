@@ -1,0 +1,32 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P3",
+  "para_order": 3,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "1종/2종/3종 지레 구조 차이 → 골격근 수축 → 관절 중심 작용점 이동",
+      "importance_score": 0.92,
+      "normalized_score": 1.0,
+      "importance_role": "main_mechanism",
+      "reason": "이 slot은 문단의 중심축인 '지레 구조별로 골격근 수축이 관절을 중심으로 작용점을 이동시켜 인체 운동을 발생시킨다'는 원리의 핵심 연결 고리이다. 예시/적용 문단에서 구조 차이와 작동 원리를 통합적으로 제시하며, 이 slot이 빠지면 문단의 중심 역할(지레 원리의 인체 적용 설명)이 무너진다. optional로 분리된 구체적 예시 없이도 이 slot만으로 문단의 핵심 관계가 성립된다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 0.92,
+    "max_score": 0.92,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

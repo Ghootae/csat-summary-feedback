@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "전자 친화도 차이 + 접촉 → 전자 이동",
+      "importance_score": 0.9,
+      "normalized_score": 0.947,
+      "importance_role": "main_mechanism",
+      "reason": "문단의 중심 원리 단계로, 마찰 전기 나노 발전기의 전류 발생 원리의 출발점이자 이후 모든 단계(표면 전하 분리, 전류 발생)의 핵심 기반이 된다. 이 단계가 빠지면 전체 원리 설명이 무너진다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "전자 이동 → (+)/(-) 표면 전하 분리",
+      "importance_score": 0.85,
+      "normalized_score": 0.895,
+      "importance_role": "main_mechanism",
+      "reason": "전자 이동의 직접적 결과로 표면 전하 분리가 일어나야 전류 발생의 메커니즘이 성립한다. 중심 흐름의 필수 고리로, 전류 발생의 전제 조건이다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "표면 전하 분리 → 전류 발생",
+      "importance_score": 0.95,
+      "normalized_score": 1.0,
+      "importance_role": "conclusion",
+      "reason": "문단의 최종 귀결이자 전체 중심축(전류 발생 원리)과 직접 연결되는 결론 단계이다. 이 slot이 없으면 문단의 핵심 역할이 크게 훼손된다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.7,
+    "max_score": 0.95,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

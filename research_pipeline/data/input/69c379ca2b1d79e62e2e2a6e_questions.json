@@ -1,0 +1,163 @@
+[
+  {
+    "question_number": 11,
+    "points": 2,
+    "title": "윗글을 읽고 알 수 있는 내용 파악",
+    "tags": [
+      "세부정보파악",
+      "적절하지않은것"
+    ],
+    "stem": "윗글을 읽고 알 수 있는 내용으로 적절하지 않은 것은?",
+    "supplements": [],
+    "choices": [
+      {
+        "choice_number": 1,
+        "text": "힘줄은 뼈와 골격근을 연결하는 역할을 한다."
+      },
+      {
+        "choice_number": 2,
+        "text": "골격근은 이완함으로써 수축하는 힘을 만들어 낸다."
+      },
+      {
+        "choice_number": 3,
+        "text": "팔에 있는 이두근과 삼두근은 쌍을 이루어 작동한다."
+      },
+      {
+        "choice_number": 4,
+        "text": "근육 원섬유를 통해 골격근의 수축 작용이 일어난다."
+      },
+      {
+        "choice_number": 5,
+        "text": "근육 원섬유 마디는 근육이 수축하는 기본 단위가 된다."
+      }
+    ],
+    "image_urls": []
+  },
+  {
+    "question_number": 12,
+    "points": 2,
+    "title": "㉠(운동 후 숨을 몰아쉬는 현상) 이해",
+    "tags": [
+      "추론",
+      "적용"
+    ],
+    "stem": "㉠을 이해한 내용으로 가장 적절한 것은?",
+    "supplements": [],
+    "choices": [
+      {
+        "choice_number": 1,
+        "text": "근육의 피로가 해소된 후 일어나는 현상이겠군."
+      },
+      {
+        "choice_number": 2,
+        "text": "분해할 젖산의 양이 줄어 나타나는 현상이겠군."
+      },
+      {
+        "choice_number": 3,
+        "text": "생산된 ATP의 양이 많아 일어나는 현상이겠군."
+      },
+      {
+        "choice_number": 4,
+        "text": "포도당과 지방산의 생산을 유발하는 현상이겠군."
+      },
+      {
+        "choice_number": 5,
+        "text": "크레아틴 인산 생산의 효율을 높이는 현상이겠군."
+      }
+    ],
+    "image_urls": []
+  },
+  {
+    "question_number": 13,
+    "points": 3,
+    "title": null,
+    "tags": [],
+    "stem": "<보기>에서 다리를 들어 올릴 때 작용하는 지레의 종류로 적절한 것은?",
+    "supplements": [
+      {
+        "label": "보기",
+        "text": "\n",
+        "elements": [
+          {
+            "kind": "image",
+            "start": 12,
+            "end": 12,
+            "src": "https://d1c00yjit06b00.cloudfront.net/exams/69c3678ae0eb6020d7f58411/1774416780301-image-0.png",
+            "alt": 378,
+            "widthPercent": 380,
+            "align": "center"
+          },
+          {
+            "kind": "paragraph",
+            "start": 12,
+            "end": 12
+          },
+          {
+            "kind": "paragraph",
+            "start": 214,
+            "end": 214
+          }
+        ],
+        "image_urls": [
+          "https://d1c00yjit06b00.cloudfront.net/exams/69c3678ae0eb6020d7f58411/1774416780301-image-0.png"
+        ]
+      }
+    ],
+    "choices": [
+      {
+        "choice_number": 1,
+        "text": "'힘점(B)-받침점(C)-작용점(A)'의 구조로 된 1종 지레이다."
+      },
+      {
+        "choice_number": 2,
+        "text": "'받침점(A)-작용점(B)-힘점(C)'의 구조로 된 2종 지레이다."
+      },
+      {
+        "choice_number": 3,
+        "text": "'받침점(B)-작용점(C)-힘점(A)'의 구조로 된 2종 지레이다."
+      },
+      {
+        "choice_number": 4,
+        "text": "'받침점(A)-힘점(B)-작용점(C)'의 구조로 된 3종 지레이다."
+      },
+      {
+        "choice_number": 5,
+        "text": "'받침점(B)-힘점(C)-작용점(A)'의 구조로 된 3종 지레이다."
+      }
+    ],
+    "image_urls": [
+      "https://d1c00yjit06b00.cloudfront.net/exams/69c3678ae0eb6020d7f58411/1774416780301-image-0.png"
+    ]
+  },
+  {
+    "question_number": 14,
+    "points": 2,
+    "title": null,
+    "tags": [],
+    "stem": "<보기>의 근육 원섬유 마디가 수축할 때 일어나는 변화로 적 절하지 않은 것은?",
+    "supplements": [],
+    "choices": [
+      {
+        "choice_number": 1,
+        "text": "마이오신 머리가 만든 구름다리 구조가 형성되고 분해되는 일이 반복된다."
+      },
+      {
+        "choice_number": 2,
+        "text": "암대의 길이가 줄어들며 근육 원섬유 마디에서 발생하는 힘의 크기가 커진다."
+      },
+      {
+        "choice_number": 3,
+        "text": "명대의 길이가 줄어들며 전자 현미경으로 관찰할 때 밝게 보이는 구간이 좁아진다."
+      },
+      {
+        "choice_number": 4,
+        "text": "액틴 필라멘트가 마이오신 필라멘트 사이로 미끄러져 들어가며 H대의 길이가 줄어든다."
+      },
+      {
+        "choice_number": 5,
+        "text": "액틴 필라멘트를 서로 이어 주는 Z선 사이의 간격이 줄어들며 근육 원섬유 마디의 길이가 짧아진다."
+      }
+    ],
+    "image_urls": []
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "schema_version": "passage_thesis_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "language": "ko",
+  "central_object": {
+    "text": "마찰 전기 나노 발전기(TENG)",
+    "evidence_quote": "이러한 원리에 기반하여 전류를 발생시키는 것이 마찰 전기 나노 발전기(TENG)이다."
+  },
+  "main_axis_type": "원리형",
+  "main_axis": "전자 친화도 차이 및 접촉 방식 → 전자의 이동(전류 발생) 원리 → 전기 에너지 생성 및 성능 향상 조건",
+  "passage_thesis": "마찰 전기 나노 발전기는 전자 친화도가 다른 두 물질의 접촉과 분리 또는 미끄러짐을 통해 전자의 이동으로 전류를 발생시키며, 유효 접촉 면적을 늘리면 성능이 향상된다.",
+  "supporting_axes": [
+    {
+      "axis_id": "A1",
+      "text": "수직 방식과 슬라이딩 방식의 구조적 차이에 따른 전류 발생 메커니즘",
+      "evidence_quote": "TENG에는 수직 방식과 슬라이딩 방식이 있는데"
+    }
+  ],
+  "paragraph_role_hints": [
+    {
+      "para_id": "P1",
+      "role": "기본 원리 제시",
+      "role_summary": "전자 친화도 차이에 따른 전자의 이동과 TENG의 기본 원리를 설명한다.",
+      "evidence_quote": "전자 친화도가 다른 두 물질이 접촉하면 접촉면을 통해 전자 친화도가 큰 물질 쪽으로 전자가 이동하여"
+    },
+    {
+      "para_id": "P2",
+      "role": "수직 방식 구조 및 작동 과정 설명",
+      "role_summary": "수직 방식 TENG의 구조와 접촉-분리 과정에서의 전하 이동을 설명한다.",
+      "evidence_quote": "수직 방식은 두 물질이 수직으로 접촉하고 분리되는 움직임을 반복하며 전기를 발생시킨다."
+    },
+    {
+      "para_id": "P3",
+      "role": "수직 방식의 전류 발생 원리 구체화",
+      "role_summary": "접촉-분리 반복에 따른 전류 방향 변화와 교류 전류 발생을 구체적으로 설명한다.",
+      "evidence_quote": "이러한 접촉–분리 과정이 반복되면 전류의 방향이 주기적으로 바뀌는 교류 형태의 전류가 나타난다."
+    },
+    {
+      "para_id": "P4",
+      "role": "슬라이딩 방식의 원리 및 전류 발생 설명",
+      "role_summary": "슬라이딩 방식에서 접촉 면적 변화에 따른 전위차와 전류 발생 원리를 설명한다.",
+      "evidence_quote": "슬라이딩 방식은 두 물질이 접촉한 상태에서 한쪽이 수평 방향으로 이동하며 전기를 발생시킨다."
+    },
+    {
+      "para_id": "P5",
+      "role": "성능 향상 조건 제시",
+      "role_summary": "유효 접촉 면적 확대가 TENG 성능 향상에 중요함을 제시한다.",
+      "evidence_quote": "유효 접촉 면적을 늘리는 것이 중요하다."
+    }
+  ],
+  "notes": {
+    "problem_independent": true,
+    "use_for": "paragraph_gold_alignment",
+    "avoid": [
+      "문항 기반 선별",
+      "문단별 내용 나열",
+      "배경지식",
+      "가치판단",
+      "과도한 세부 정보"
+    ]
+  }
+}

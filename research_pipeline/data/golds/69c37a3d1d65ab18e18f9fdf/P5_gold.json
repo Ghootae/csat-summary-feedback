@@ -1,0 +1,38 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "엔트로피 = 유효 에너지 감소 정도",
+        "source_items": [
+          "엔트로피 = 유효하게 이용할 수 있는 에너지의 감소 정도"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "엔트로피 → 열의 이동과 관련",
+        "source_items": [
+          "엔트로피는 열의 이동과 관련됨"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

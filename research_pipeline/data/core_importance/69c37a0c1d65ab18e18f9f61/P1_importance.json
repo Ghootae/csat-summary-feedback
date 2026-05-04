@@ -1,0 +1,40 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "그라피티 = 공공장소 낙서(글자/그림)",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "topic_anchor",
+      "reason": "문단의 중심 대상이자 정의로, 이후 변화 축의 출발점이 되며 문단 전체의 핵심 역할을 담당한다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "그라피티 기원 → 기존 질서 저항 행위",
+      "importance_score": 0.8,
+      "normalized_score": 0.89,
+      "importance_role": "definition_core",
+      "reason": "중심 대상(그라피티)의 기원을 제시하여 변화 축의 첫 단계이자 문단의 구조적 핵심을 이룬다. 정의와 함께 문단의 중심 관계를 구성한다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 1.7,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P2",
+  "para_order": 2,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "골격근 → 지레 원리 적용 → 힘 전달",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "main_mechanism",
+      "reason": "이 slot은 문단의 중심 관계(골격근이 힘을 전달하는 원리)에서 지레 원리의 적용을 통해 힘이 전달된다는 핵심 메커니즘을 직접적으로 제시한다. 문단의 주제와 passage_thesis의 '지레 원리로 힘을 전달'과도 직결되어, 이 slot이 빠지면 문단의 중심 역할이 크게 훼손된다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "지레의 구조 = 받침점/힘점/작용점",
+      "importance_score": 0.8,
+      "normalized_score": 0.89,
+      "importance_role": "definition_core",
+      "reason": "지레 원리의 핵심 구조(받침점/힘점/작용점)를 명확히 정의하여, 힘 전달 방식의 구체적 설명의 토대가 된다. 문단의 중심 메커니즘을 이해하는 데 필수적인 정의로, 중심 흐름을 유지하는 중요한 구성 관계이다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "관절=받침점, 힘줄 끝=힘점, 힘 미치는 곳=작용점",
+      "importance_score": 0.75,
+      "normalized_score": 0.83,
+      "importance_role": "main_mechanism",
+      "reason": "지레 구조가 인체 내에서 어떻게 대응되는지 구체적으로 연결하여, 골격근의 힘 전달 메커니즘을 인체 구조와 직접 연계한다. 중심 메커니즘의 구체화로서, 문단의 핵심 역할을 보조하면서도 중심 흐름에 필수적이다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.45,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

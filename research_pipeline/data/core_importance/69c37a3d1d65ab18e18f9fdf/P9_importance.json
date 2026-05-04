@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P9",
+  "para_order": 9,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "기능적 사고 → 세계 이해 방식",
+      "importance_score": 0.85,
+      "normalized_score": 0.944,
+      "importance_role": "topic_anchor",
+      "reason": "문단의 중심 대상이자, 반 퍼슨의 문화 형성 원리에서 기능적 사고가 문화를 바라보는 핵심 관점으로 작용한다. 두 이론 비교의 한 축을 담당하며, 이후 모든 설명의 출발점이 된다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "기능적 사고 → 역할 중심 관계 위계화",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "main_mechanism",
+      "reason": "기능적 사고가 문화 내에서 어떻게 구체적으로 작동하는지 보여주는 핵심 메커니즘이다. 문화 조직 원리의 중심 고리로, 문단의 중심 관계를 완성한다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "역할 체계화 → 원활한 행정 업무 수행",
+      "importance_score": 0.75,
+      "normalized_score": 0.833,
+      "importance_role": "main_effect",
+      "reason": "기능적 사고의 작동 결과로 도출되는 직접적 효과이자, 문화(관료제)에서의 귀결을 설명한다. 문단의 흐름상 결론적 역할을 하지만, 메커니즘 자체보다는 한 단계 뒤에 위치한다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.5,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

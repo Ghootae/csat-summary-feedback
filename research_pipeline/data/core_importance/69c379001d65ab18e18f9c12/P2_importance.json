@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379001d65ab18e18f9c12",
+  "para_id": "P2",
+  "para_order": 2,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "매매 계약 이행 과정 → 위험 부담 주체: 매도인 → 매수인",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "main_mechanism",
+      "reason": "문단의 중심 구조이자 전체 논지의 핵심 고리로, 위험 이전의 구조와 주체 변화가 문단의 중심 역할을 담당한다. 이 slot이 없으면 문단의 구조적 설명이 무너진다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "위험 이전 전 → 손해·책임: 매도인 부담",
+      "importance_score": 0.75,
+      "normalized_score": 0.83,
+      "importance_role": "main_effect",
+      "reason": "위험 이전 전 책임 귀속의 핵심 근거로, 구조적 설명의 필수 단계이다. 중심 메커니즘(C1)과 함께 문단의 논리적 흐름을 완성한다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "위험 이전 후 → 손해·책임: 매수인 부담 및 대금 지급 의무",
+      "importance_score": 0.85,
+      "normalized_score": 0.94,
+      "importance_role": "conclusion",
+      "reason": "위험 이전 후 책임 귀속 변화의 결론적 귀결로, 문단의 구조적 완결을 담당한다. 전체 논지의 한 축이자 실질적 결론 역할을 한다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.5,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

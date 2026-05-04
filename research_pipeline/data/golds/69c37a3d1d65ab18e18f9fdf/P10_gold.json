@@ -1,0 +1,46 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P10",
+  "para_order": 10,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "세 가지 사고 유형 상호작용 → 삶의 방식 변화",
+        "source_items": [
+          "세 가지 사고 유형이 인간 의식 속에서 상호작용함",
+          "사고 유형 상호작용 → 삶의 방식 형성 및 변화"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "문화 = 역동적 과정",
+        "source_items": [
+          "문화는 완결된 체계가 아니라 역동적 과정임"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "세 가지 사고 유형이 인간의 의식 속에 중첩됨",
+        "source_items": [
+          "세 가지 사고 유형이 인간의 의식 속에 중첩됨"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

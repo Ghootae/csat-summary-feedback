@@ -1,0 +1,936 @@
+수능 국어 비문학 요약 평가·피드백 시스템 작업 정리
+작성 목적: 새 대화창에서 작업을 이어가기 위한 상세 인계 문서
+작성일: 2026-05-04
+
+============================================================
+0. 현재 상태 한 줄 요약
+============================================================
+
+현재까지 완료된 핵심 작업은 다음이다.
+
+1. gugeodat.com 자료 미리보기 기반 크롤링 파이프라인 구축
+2. 크롤링 결과를 normalized_passage JSON으로 정규화
+3. 제시문 전체 thesis / main_axis 추출 단계 구축
+4. 각 문단 paragraph_anchor 추출 단계 구축
+5. paragraph_anchor 기반 final GOLD 추출 단계 구축
+6. core slot importance scoring 단계 구축
+7. 위 모든 단계를 한 번에 실행하는 Mac/Windows용 skip 배치 파일 작성
+
+현재 다음 단계는 “생성된 GOLD를 실제 학생 요약 평가에 사용하는 Eval_Diagnose_CoreSlots v2 설계”다.
+
+============================================================
+1. 프로젝트의 최상위 목적
+============================================================
+
+이 프로젝트의 목적은 학생의 비문학 요약을 정답/오답으로 채점하는 것이 아니다.
+
+목적은 다음이다.
+
+- 학생이 문단을 읽는 과정에서 누락한 핵심 사고 단계를 찾아낸다.
+- 누락된 사고 단계 하나를 선택한다.
+- 학생이 단 한 번의 수정 행동으로 해당 사고 단계를 복원하도록 돕는다.
+
+핵심 철학:
+
+- GOLD는 모범 요약이 아니다.
+- GOLD는 학생 요약 평가를 위한 최소 사고 관계 구조다.
+- 평가(A1)와 코칭(A2)은 분리한다.
+- 평가 프롬프트는 판단만 한다.
+- 코칭 프롬프트는 행동 수정만 유도한다.
+- 한 번의 수정 루프에서는 target slot 하나만 다룬다.
+- 실패 시 재시도 대신 기준 사고 구조를 제시하고 종료한다.
+
+현재 시스템의 교육적 목표는 다음 문장으로 요약된다.
+
+“학생이 문단을 읽으며 놓친 사고 관계를 하나 찾아서, 한 번의 문장 수정으로 복원하게 만든다.”
+
+============================================================
+2. 기존 병목과 해결
+============================================================
+
+기존에는 엑셀 기반으로 지문, 문항, 이미지, 기호, 문단 정보를 수작업으로 정리했다.
+
+이 방식의 병목:
+
+- 지문 전문 확보가 느림
+- 문제/보기/선지 구조를 수동 정리해야 함
+- 이미지/도표 URL과 위치를 수동 기록해야 함
+- ㉠, ⓐ, ㄱ 같은 기호 참조를 수동 마킹해야 함
+- 문단별 GOLD 작성 전에 원천 데이터 정리에 너무 많은 시간이 듦
+
+이번 작업에서 gugeodat.com의 자료 미리보기 페이지를 분석하여 React Router stream 안에 들어 있는 구조화 데이터를 추출할 수 있음을 확인했다.
+
+자동 추출 가능해진 항목:
+
+- 제시문 전체 텍스트
+- 문단 분리
+- 문항 번호
+- 발문
+- 선택지
+- 보기 텍스트
+- 보기 내부 이미지
+- 본문 이미지
+- 이미지 URL
+- 이미지 위치
+- 이미지 align/float 정보
+- 본문/보기의 기호 표시: ㉠, ⓐ 등
+- 본문 passage_elements
+- passage_tags
+
+결론:
+
+엑셀은 더 이상 원천 저장소가 아니다.
+엑셀은 검수/실험 로그용으로만 쓴다.
+원천 데이터는 JSON 중심으로 전환한다.
+
+============================================================
+3. 크롤링 프로젝트 구조
+============================================================
+
+현재 크롤링 폴더 구조:
+
+crawlingTest/
+├─ crawl_one_fixed.py
+├─ crawl_five.py
+├─ gugeodat_one/
+│  ├─ questions.json
+│  ├─ result.json
+│  ├─ {product_id}_result.json
+│  └─ {product_id}_questions.json
+└─ archived/
+   └─ crawl_one.py
+
+역할:
+
+crawl_one_fixed.py
+- 단일 gugeodat product URL을 대상으로 크롤링한다.
+- 결과를 gugeodat_one/result.json, gugeodat_one/questions.json에 저장한다.
+
+crawl_five.py
+- 여러 개의 gugeodat.com/products/... URL을 순회한다.
+- 각 상품별로 {product_id}_result.json, {product_id}_questions.json 파일을 만든다.
+
+_result.json
+- 지문, 제목, 시험 정보, 문항 범위, 이미지 URL, 문항 전체를 포함한 통합 결과다.
+
+_questions.json
+- 문항 목록만 따로 뽑은 파일이다.
+
+크롤링에서 해결한 기술적 문제:
+
+1. React Router stream 데이터 추출
+2. 참조형 데이터 구조 복원
+3. 숫자 참조 중 실제 숫자 필드(questionNumber, points 등)와 참조 인덱스 구분
+4. 이미지 src가 숫자 참조로 남는 문제 해결
+5. 보기 내부 이미지 URL 복원
+6. question_number가 잘못 products 등으로 풀리는 문제 해결
+7. 문항/보기/선지/이미지 구조를 분리 저장
+
+확인된 크롤링 성공 사례:
+
+- 그라피티 지문: 15~17번 문제, 보기 이미지, ⓐ 기호 정상 추출
+- 골격근 지문: 본문 이미지, 보기 이미지 정상 추출
+- 화이트/반 퍼슨 이중 지문: (가)/(나), ㉠, ⓐ~ⓔ 등 기호 구조 확인
+- 법 지문, 과학 지문, 이미지 포함 과학 지문 정상 추출
+
+============================================================
+4. GOLD 실험 프로젝트 구조
+============================================================
+
+현재 GOLD 실험 폴더 구조:
+
+gold_ablation_project/
+├─ README.md
+├─ requirements.txt
+├─ .env
+├─ .env.example
+├─ data/
+│  ├─ input/
+│  ├─ normalized/
+│  ├─ thesis/
+│  ├─ paragraph_anchors/
+│  ├─ golds/
+│  └─ core_importance/
+├─ prompts/
+│  ├─ 00_extract_passage_thesis.md
+│  ├─ 00b_extract_paragraph_anchor.md
+│  ├─ 01_generate_candidate.md
+│  ├─ 02_merge_slots.md
+│  ├─ 03_reconstruct.md
+│  ├─ 04_ablation_loss.md
+│  ├─ 05_final_prune.md
+│  ├─ 06_extract_gold_from_anchor.md
+│  └─ 07_score_core_importance.md
+├─ src/
+│  └─ gold_ablation/
+│     ├─ __init__.py
+│     ├─ llm.py
+│     ├─ pipeline.py
+│     ├─ utils.py
+│     ├─ normalize_input.py
+│     ├─ extract_passage_thesis.py
+│     ├─ extract_paragraph_anchor.py
+│     ├─ extract_gold_from_anchor.py
+│     └─ extract_core_importance.py
+├─ outputs/
+│  ├─ graffiti_p2/
+│  ├─ graffiti_p3/
+│  └─ graffiti_p4/
+├─ run_full_gold_pipeline_with_importance_skip_mac.sh
+└─ run_full_gold_pipeline_with_importance_skip_windows.bat
+
+각 폴더 역할:
+
+data/input/
+- 크롤링 결과인 *_result.json, *_questions.json 보관
+
+data/normalized/
+- result.json을 passage 단위로 정규화한 파일 저장
+
+data/thesis/
+- 제시문 전체 핵심 사고축 결과 저장
+
+data/paragraph_anchors/
+- 각 문단의 중심 좌표 저장
+
+data/golds/
+- 최종 문단 GOLD 저장
+
+data/core_importance/
+- core slot 중요도 점수 저장
+
+prompts/
+- 단계별 LLM 프롬프트 저장
+
+src/gold_ablation/
+- 단계별 실행 코드 저장
+
+outputs/
+- 과거 ablation 실험 결과 보관
+
+============================================================
+5. 현재 확정된 전체 파이프라인
+============================================================
+
+최종 파이프라인은 다음이다.
+
+1. 크롤링 result.json 생성
+2. normalized_passage.json 생성
+3. passage_thesis.json 생성
+4. paragraph_anchor.json 생성
+5. final GOLD 생성
+6. core importance scoring 생성
+
+즉:
+
+crawling result.json
+→ normalized passage
+→ passage thesis
+→ paragraph anchor
+→ paragraph GOLD
+→ core importance
+
+이전에는 다음 방식도 실험했다.
+
+후보 GOLD 여러 개 생성
+→ 병합
+→ leave-one-out ablation
+→ importance score
+→ final prune
+
+하지만 현재는 ablation/frequency를 핵심 로직에서 제거했다.
+현재 방향은 paragraph_anchor 기반 구조 판단이다.
+
+============================================================
+6. 정규화 단계
+============================================================
+
+파일:
+src/gold_ablation/normalize_input.py
+
+입력:
+data/input/{product_id}_result.json
+
+출력:
+data/normalized/{product_id}_passage.json
+
+출력 구조:
+
+{
+  "schema_version": "normalized_passage_v1",
+  "passage_id": "",
+  "source_file": "",
+  "url": "",
+  "product_id": "",
+  "title": "",
+  "exam": "",
+  "question_range": "",
+  "instruction": "",
+  "passage_text": "",
+  "paragraphs": [
+    {
+      "para_id": "P1",
+      "para_order": 1,
+      "text": ""
+    }
+  ],
+  "passage_elements": [],
+  "passage_tags": [],
+  "image_urls": [],
+  "questions": [],
+  "metadata": {
+    "num_paragraphs": 0,
+    "has_images": false,
+    "has_questions": false
+  }
+}
+
+실행:
+
+Mac/Linux:
+python -m src.gold_ablation.normalize_input --input data/input --out data/normalized
+
+Windows:
+python -m src.gold_ablation.normalize_input --input data\input --out data\normalized
+
+정상 확인:
+
+- 그라피티 지문은 P1~P5로 정상 분리됨
+- passage_text 전체 보존
+- questions 전체 보존
+- image_urls 보존
+- passage_elements 보존
+
+============================================================
+7. 제시문 전체 thesis 추출
+============================================================
+
+프롬프트:
+prompts/00_extract_passage_thesis.md
+
+실행 파일:
+src/gold_ablation/extract_passage_thesis.py
+
+목적:
+
+제시문 전체의 상위 anchor를 생성한다.
+
+추출 항목:
+
+- central_object
+- main_axis_type
+- main_axis
+- passage_thesis
+- supporting_axes
+- paragraph_role_hints
+
+핵심 철학:
+
+제시문 전체 요약은 문단별 내용을 나열하는 목차가 아니다.
+제시문 전체 요약은 글 전체를 관통하는 중심 사고축을 확정하는 작업이다.
+
+좋은 passage_thesis의 조건:
+
+- 중심 대상이 드러난다.
+- 핵심 관계/구조/변화/원리가 드러난다.
+- 최종 귀결/효과/의의가 드러난다.
+- 너무 추상적이지 않다.
+- 너무 자세하지 않다.
+- 문제와 독립한다.
+
+예시: 그라피티 지문
+
+central_object:
+그라피티
+
+main_axis_type:
+변화형
+
+main_axis:
+저항적 낙서 행위 → 예술적 기법과 메시지 도입 → 공공 예술로 인정
+
+passage_thesis:
+그라피티는 저항적 낙서에서 출발해 예술적 기법과 사회적 메시지를 도입함으로써 현대 사회의 문제를 조명하는 공공 예술 장르로 변화하였다.
+
+예시: 골격근 지문
+
+central_object:
+골격근
+
+main_axis_type:
+원리형
+
+main_axis:
+골격근의 구조와 에너지 공급 조건 → 수축 및 힘 전달 원리 → 인체 운동 실현과 그 효과
+
+passage_thesis:
+골격근은 근육 세포 내 구조와 에너지 공급 과정을 바탕으로 수축하여 지레 원리로 힘을 전달함으로써 인체 운동을 실현한다.
+
+실행:
+
+단일 파일:
+python -m src.gold_ablation.extract_passage_thesis --input data/normalized/{product_id}_passage.json
+
+Windows 전체 처리:
+for %f in (data\normalized\*_passage.json) do python -m src.gold_ablation.extract_passage_thesis --input "%f"
+
+============================================================
+8. paragraph_anchor 생성
+============================================================
+
+프롬프트:
+prompts/00b_extract_paragraph_anchor.md
+
+실행 파일:
+src/gold_ablation/extract_paragraph_anchor.py
+
+목적:
+
+각 문단이 전체 글의 중심축 안에서 어떤 역할을 하는지 분석한다.
+
+중요 철학:
+
+paragraph_anchor는 최종 GOLD가 아니다.
+paragraph_anchor는 GOLD를 만들기 위한 문단 중심 좌표다.
+
+출력 구조:
+
+{
+  "schema_version": "paragraph_anchor_v1",
+  "passage_id": "",
+  "para_id": "",
+  "para_order": 0,
+  "language": "ko",
+  "passage_anchor": {
+    "central_object": "",
+    "main_axis_type": "",
+    "main_axis": "",
+    "passage_thesis": ""
+  },
+  "paragraph_role": {
+    "role_type": "",
+    "role_name": "",
+    "role_in_passage_axis": "",
+    "evidence_quote": ""
+  },
+  "paragraph_focus": {
+    "central_relation": "",
+    "must_preserve": [
+      {
+        "item": "",
+        "reason": "",
+        "evidence_quote": ""
+      }
+    ],
+    "secondary": [
+      {
+        "item": "",
+        "reason": "",
+        "evidence_quote": ""
+      }
+    ]
+  },
+  "notes": {}
+}
+
+must_preserve:
+
+- 현재 문단을 이해하는 데 반드시 필요한 사고 관계
+- 문단 역할을 성립시키는 관계
+- central_relation의 핵심 고리
+
+secondary:
+
+- 정의
+- 예시
+- 배경
+- 세부 방식
+- 부가 효과
+
+중요한 철학 수정:
+
+학생은 단락 하나씩 제시받고 중요 내용을 기입한다.
+따라서 문단 GOLD는 전체 뒤 문단을 알고 좁히는 방식이 아니라, 현재 문단 내부 기준으로 잡는 것이 맞다.
+
+passage_anchor는 전체 방향을 잡는 보조 장치이지, 뒤 문단 기준으로 현재 문단 정보를 삭제하는 기준이 아니다.
+
+즉:
+
+passage_anchor = 약한 방향 보조
+para_text = 실제 문단 GOLD 판단의 주 기준
+
+실행:
+
+python -m src.gold_ablation.extract_paragraph_anchor \
+  --input data/normalized \
+  --thesis-dir data/thesis \
+  --prompt prompts/00b_extract_paragraph_anchor.md \
+  --out data/paragraph_anchors \
+  --temperature 0.2
+
+============================================================
+9. final GOLD 생성
+============================================================
+
+프롬프트:
+prompts/06_extract_gold_from_anchor.md
+
+실행 파일:
+src/gold_ablation/extract_gold_from_anchor.py
+
+목적:
+
+paragraph_anchor를 바탕으로 최종 GOLD를 생성한다.
+
+중요 철학:
+
+paragraph_anchor = 넓은 후보 집합
+GOLD = 평가 가능한 최소 사고 구조
+
+출력 구조:
+
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "",
+  "para_id": "",
+  "para_order": 0,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "",
+        "source_items": [""]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "",
+        "source_items": [""]
+      }
+    ]
+  }
+}
+
+core slot 원칙:
+
+- 한 slot = 하나의 관계
+- 도식형 표현
+- A → B
+- A = B
+- A/B → C
+- 설명문 금지
+- 원문 문장 재서술 금지
+- 문단 요약문 금지
+
+중요한 논리:
+
+must_preserve는 core 후보이지 최종 core가 아니다.
+secondary는 optional 후보이지 항상 optional로 고정되는 것은 아니다.
+final GOLD는 문단 역할을 유지하는 최소 사고 관계를 남긴다.
+
+실행:
+
+python -m src.gold_ablation.extract_gold_from_anchor \
+  --input data/paragraph_anchors \
+  --prompt prompts/06_extract_gold_from_anchor.md \
+  --out data/golds \
+  --temperature 0.2
+
+============================================================
+10. core importance scoring
+============================================================
+
+프롬프트:
+prompts/07_score_core_importance.md
+
+실행 파일:
+src/gold_ablation/extract_core_importance.py
+
+목적:
+
+이미 확정된 core_slots 각각에 문단 내부 중요도 점수를 부여한다.
+
+중요 철학:
+
+GOLD = 어떤 사고 관계가 필요한가
+importance = 그 관계가 얼마나 중심적인가
+
+importance_score는 GOLD 생성 기준이 아니다.
+importance_score는 GOLD 활용 레이어다.
+
+사용처:
+
+- 학생 보상 차등
+- missing slot 중 target_slot 선택
+- 학습 로그 분석
+- 같은 개수의 core를 맞춘 학생 간 질적 차이 반영
+
+입력:
+
+- paragraph_anchor
+- gold
+
+출력 구조:
+
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "",
+  "para_id": "",
+  "para_order": 0,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "",
+      "importance_score": 0.0,
+      "normalized_score": 0.0,
+      "importance_role": "",
+      "reason": ""
+    }
+  ],
+  "normalization": {
+    "sum_score": 0.0,
+    "max_score": 0.0,
+    "method": "normalized_score = importance_score / max_score"
+  }
+}
+
+importance role taxonomy:
+
+- topic_anchor
+- definition_core
+- classification_basis
+- core_transition
+- main_mechanism
+- main_effect
+- limitation_basis
+- conclusion
+- supporting_core
+
+점수 기준:
+
+0.90~1.00
+- 문단 결론, 최종 귀결, 평가, 의의
+- 문단 중심 관계를 완성하는 최종 단계
+
+0.75~0.89
+- 핵심 전환
+- 핵심 메커니즘
+- 결론/평가/한계의 직접 근거
+- 목적-수단-효과 구조의 핵심 연결
+
+0.60~0.74
+- 중요한 구성 관계
+- 중심 흐름을 유지하는 데 필요하지만 다른 core와 함께 기능하는 관계
+
+0.45~0.59
+- core에는 포함되지만 상대적으로 보조적인 핵심 관계
+
+0.44 이하
+- 일반적으로 core가 아니라 optional이어야 하는 수준
+- 이 점수를 줄 경우 reason에 “core 여부 재검토 필요”라고 써야 함
+
+실행:
+
+python -m src.gold_ablation.extract_core_importance \
+  --input data/golds \
+  --anchors data/paragraph_anchors \
+  --prompt prompts/07_score_core_importance.md \
+  --out data/core_importance \
+  --temperature 0.2 \
+  --skip-existing
+
+============================================================
+11. 전체 파이프라인 실행 파일
+============================================================
+
+Mac용:
+run_full_gold_pipeline_with_importance_skip_mac.sh
+
+Windows용:
+run_full_gold_pipeline_with_importance_skip_windows.bat
+
+기능:
+
+- 정규화
+- thesis 추출
+- paragraph anchor 추출
+- final GOLD 추출
+- core importance scoring
+
+을 한 번에 실행한다.
+
+이미 존재하는 결과 파일은 스킵한다.
+
+스킵 기준:
+
+- data/normalized/{product_id}_passage.json 있으면 정규화 스킵
+- data/thesis/{product_id}_thesis.json 있으면 thesis 스킵
+- data/paragraph_anchors/{product_id}/P1_paragraph_anchor.json 있으면 anchor 스킵
+- data/golds/{product_id}/{P번호}_gold.json 있으면 gold 스킵
+- data/core_importance/{product_id}/{P번호}_importance.json 있으면 importance 스킵
+
+Mac 실행:
+
+chmod +x run_full_gold_pipeline_with_importance_skip_mac.sh
+./run_full_gold_pipeline_with_importance_skip_mac.sh
+
+Windows 실행:
+
+run_full_gold_pipeline_with_importance_skip_windows.bat
+
+주의:
+
+Mac에서는 .bat 파일이 실행되지 않는다.
+Mac에서는 .sh 파일을 사용해야 하며, 실행 시 ./ 를 붙인다.
+
+============================================================
+12. 기존 ablation 방식에 대한 결론
+============================================================
+
+이전 실험:
+
+후보 GOLD 여러 개 생성
+→ 병합
+→ leave-one-out ablation
+→ importance score
+→ final prune
+
+의의:
+
+- 후보 생성과 병합 실험에는 도움이 됨
+- slot 중요도 개념을 떠올리는 데 유용했음
+- 보상 점수 아이디어를 얻는 데 도움이 됨
+
+한계:
+
+- ablation이 빠진 정보를 추론으로 메우는 경향
+- final prune이 너무 많이 잘라내는 경향
+- 점수 기반보다 구조 기반 판단이 더 안정적
+- 학생이 문단 하나씩 보는 상황에서는 뒤 문단 기준으로 줄이면 안 됨
+
+현재 방향:
+
+- ablation/frequency는 핵심 로직에서 제거
+- paragraph_anchor 기반으로 구조 판단
+- GOLD는 anchor에서 직접 추출
+- importance는 별도 활용 레이어로 분리
+
+============================================================
+13. 테스트 결과 요약
+============================================================
+
+13.1 그라피티 P1
+
+importance:
+
+C1 그라피티 = 공공장소 낙서(글자/그림)
+- importance_score 0.90
+- topic_anchor
+
+C2 그라피티 기원 → 기존 질서 저항 행위
+- importance_score 0.80
+- definition_core
+
+판정:
+정의형 문단으로 타당함.
+
+13.2 그라피티 P2
+
+핵심 GOLD 방향:
+
+C1 태그 중심 그라피티 → 조형적 복잡화/화려함
+C2 글자: 읽는 대상 → 보는 대상으로 전환
+C3 복잡화된 태그 → 대중 인식 한계
+C4 단순 태그 행위 → 비평가의 비판
+C5 비평가의 비판 → '비가시적, 텅 빈' 평가
+
+importance:
+
+C5가 0.95로 가장 높음.
+문단 결론이므로 타당함.
+
+논의:
+
+비가시성과 공허성 모두 결론이지만, 전체 제시문의 다음 전개는 “사회적 메시지 결여”, 즉 공허성 중심으로 이어진다.
+다만 학생이 단락 하나씩 보는 목적에서는 현재 문단 내부 기준을 우선한다.
+
+13.3 그라피티 P3
+
+핵심 GOLD:
+
+C1 사회적 메시지 도입 목적 → 다양한 예술 기법 도입
+C2 스텐실 기법 도입 → 정교한 형상 표현
+C3 정교한 형상 표현 → 예술성·메시지 전달력 향상
+C4 작업 장소 고려 및 사전 준비 → 작업 속도 향상
+
+importance:
+
+C3 0.95
+C1 0.90
+C2 0.80
+C4 0.70
+
+판정:
+사회적 메시지 목적과 결과를 잘 반영함.
+작업 속도 향상은 상대적으로 낮게 가중되어 타당함.
+
+13.4 그라피티 P4
+
+핵심 GOLD:
+
+C1 장소의 특성 활용 → 사회적 메시지 강화
+C2 장소가 작품 의미 완성에 결정적 요소
+C3 장소 특정성 = 장소에서 떼어내면 의미 퇴색
+
+importance:
+
+C1 0.90
+C2 0.85
+C3 0.78
+
+판정:
+전반적으로 통과.
+다만 장소 특정성 개념 자체인 C2나 C3가 가장 높아도 자연스럽다는 의견이 있음.
+현재 결과도 틀렸다고 보긴 어렵다.
+
+13.5 그라피티 P5
+
+핵심 GOLD:
+
+C1 저항적 낙서 행위 → 다양한 방식 활용
+C2 다양한 방식 활용 → 메시지 효과적 형상화
+C3 메시지 효과적 형상화 → 공공 예술로 인정
+
+importance:
+
+C3 0.95
+C2 0.85
+C1 0.80
+
+판정:
+결론 문단으로 타당함.
+
+13.6 화이트/반 퍼슨 P2
+
+핵심 anchor:
+
+문화 = 기술적/사회적/관념적 체계
+기술적 체계 = 문화 결정 기반
+기술적 체계 변화 → 사회적/관념적 체계 변화
+
+농경 문화 사례는 secondary.
+
+판정:
+전반적으로 통과.
+다만 must_preserve에서 각 체계 정의가 과분해될 수 있으므로 final GOLD에서는 압축 필요.
+
+13.7 골격근 P2
+
+핵심 GOLD:
+
+C1 골격근 → 지레 작용으로 힘 전달
+C2 지레 구조 = 받침점/힘점/작용점
+C3 관절/힘줄 끝/힘 작용 위치 = 받침점/힘점/작용점
+
+optional:
+
+O1 지레 = 무거운 물건을 움직이는 막대기
+O2 받침점/힘점/작용점 위치 → 지레 종류 구분
+
+판정:
+과학 지문에서도 anchor → gold 변환이 안정적으로 작동함.
+
+13.8 골격근 P4
+
+문단 anchor는 넓게 잡히는 것이 정상.
+
+현재 문단만 보면 다음 요소가 모두 중요하다.
+
+- 근육 원섬유
+- 액틴/마이오신 필라멘트
+- 명대/암대/H대
+- Z선/근육 원섬유 마디
+
+중요 원칙:
+
+학생이 이 문단만 보고 중요 내용을 쓰는 상황이므로, 뒤 문단에서 덜 쓰이는 정보를 이유로 현재 문단의 core를 지나치게 줄이면 안 된다.
+
+============================================================
+14. 현재 확정된 최종 철학
+============================================================
+
+1. GOLD는 모범 요약이 아니다.
+2. GOLD는 학생 요약 평가를 위한 최소 사고 관계 구조다.
+3. 학생은 단락 하나씩 보고 중요 내용을 작성하므로, 문단 GOLD는 현재 문단 내부 기준을 우선한다.
+4. passage_anchor는 전체 방향을 잡는 보조 장치이지, 뒤 문단 기준으로 현재 문단 정보를 삭제하는 기준이 아니다.
+5. paragraph_anchor는 recall 중심으로 넓게 잡는다.
+6. final GOLD는 paragraph_anchor에서 평가 가능한 최소 관계로 정규화한다.
+7. importance score는 GOLD 생성이 아니라 보상/우선순위 레이어에서 사용한다.
+8. ablation/frequency는 현재 핵심 로직에서 제외한다.
+
+============================================================
+15. 다음 작업 후보
+============================================================
+
+다음 작업으로 적절한 것:
+
+1. data/golds + data/core_importance 전체 샘플 검수
+2. Eval_Diagnose_CoreSlots v2 작성
+3. 학생 요약 입력 → core slot 충족 여부 평가 실험
+4. missing slot 중 importance_score 기준 target slot 선택
+5. Coach_Request_TargetRepair 프롬프트를 새 slot 구조에 맞게 수정
+6. Eval_Verify_TargetSlot을 새 GOLD 구조에 맞게 수정
+7. 최종 학습 루프 연결:
+   paragraph → student summary → diagnosis → target repair → verify → confirm/close
+
+============================================================
+16. 가장 중요한 다음 단계
+============================================================
+
+바로 다음 단계는 다음이다.
+
+Eval_Diagnose_CoreSlots v2 작성
+
+입력:
+
+{
+  "student_summary": "",
+  "gold": {},
+  "core_importance": {}
+}
+
+출력:
+
+{
+  "schema_version": "eval_diagnose_v2",
+  "para_id": "",
+  "slot_results": [
+    {
+      "slot_id": "C1",
+      "gold_text": "",
+      "status": "PASS|MISS",
+      "evidence_in_student": "",
+      "diagnostic_note": ""
+    }
+  ],
+  "missing_slots": [],
+  "target_slot_recommendation": {
+    "slot_id": "",
+    "reason": ""
+  }
+}
+
+핵심 규칙:
+
+- 전체 요약을 채점하지 않는다.
+- 오직 core slot이 의미적으로 충족되었는지만 판단한다.
+- optional slot은 PASS/FAIL에 직접 사용하지 않는다.
+- missing slot이 여러 개면 importance_score가 높은 slot을 target 후보로 추천한다.
+- 실제 코칭에서는 한 번에 target slot 하나만 다룬다.
+
+============================================================
+끝
+============================================================

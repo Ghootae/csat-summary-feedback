@@ -1,0 +1,41 @@
+{
+  "schema_version": "paragraph_anchor_v1",
+  "passage_id": "69c379001d65ab18e18f9c12",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "passage_anchor": {
+    "central_object": "국제 물품 매매 계약에서의 위험 이전",
+    "main_axis_type": "구조형",
+    "main_axis": "국제 물품 매매 계약 → 위험 이전의 기준과 방식 → 손해 및 책임 귀속",
+    "passage_thesis": "국제 물품 매매 계약에서 위험 이전의 기준과 방식에 따라 계약 이행 중 발생하는 손해와 책임의 귀속이 결정된다."
+  },
+  "paragraph_role": {
+    "role_type": "용어 주석",
+    "role_name": "핵심 용어 정의",
+    "role_in_passage_axis": "위험 이전의 기준과 방식 설명에서 사용되는 핵심 용어의 의미 명확화",
+    "evidence_quote": "멸실: 물건이나 가옥 따위가 재난에 의하여 그 가치를 잃어버릴 정도로 심하게 파손됨."
+  },
+  "paragraph_focus": {
+    "central_relation": "멸실 = 재난에 의해 물건의 가치가 상실될 정도로 심하게 파손됨",
+    "must_preserve": [
+      {
+        "item": "멸실 = 재난에 의해 물건의 가치가 상실될 정도로 심하게 파손됨",
+        "reason": "위험 이전의 기준과 방식 설명에서 '멸실'의 의미를 명확히 하여, 손해 및 책임 귀속 논의의 전제 용어로 기능함",
+        "evidence_quote": "멸실: 물건이나 가옥 따위가 재난에 의하여 그 가치를 잃어버릴 정도로 심하게 파손됨."
+      }
+    ],
+    "secondary": []
+  },
+  "notes": {
+    "problem_independent": true,
+    "use_for": "paragraph_gold_alignment",
+    "avoid": [
+      "문항 기반 선별",
+      "문단별 단순 요약",
+      "배경지식",
+      "가치판단",
+      "과도한 세부 정보"
+    ]
+  }
+}

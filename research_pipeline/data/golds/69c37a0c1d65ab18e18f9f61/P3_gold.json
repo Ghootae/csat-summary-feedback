@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P3",
+  "para_order": 3,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "사회적 메시지 도입 목적 → 다양한 예술 기법 도입",
+        "source_items": [
+          "사회적 메시지를 담기 위해 다양한 기법 도입"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "스텐실 기법 도입 → 정교한 형상 표현",
+        "source_items": [
+          "스텐실 기법 활용"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "정교한 형상 표현 → 예술성·메시지 전달력 향상",
+        "source_items": [
+          "정교한 형상 표현 → 예술성·메시지 전달력 향상"
+        ]
+      },
+      {
+        "slot_id": "C4",
+        "text": "작업 장소 고려 및 사전 준비 → 작업 속도 향상",
+        "source_items": [
+          "작업 장소 고려 및 사전 준비 → 작업 속도 향상"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "1980년대라는 시대적 배경",
+        "source_items": [
+          "1980년대라는 시대적 배경"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

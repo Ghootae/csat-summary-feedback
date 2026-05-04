@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P4",
+  "para_order": 4,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "장소의 특성 활용 → 사회적 메시지 강화",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "main_mechanism",
+      "reason": "이 slot은 문단의 중심 원리(장소의 특성을 활용해 사회적 메시지를 강화하는 방식)를 직접적으로 설명하며, 문단 전체의 메커니즘 구조를 성립시키는 핵심 고리이다. 이 관계가 빠지면 문단의 중심 설명이 무너진다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "장소가 작품 의미 완성에 결정적 요소",
+      "importance_score": 0.85,
+      "normalized_score": 0.94,
+      "importance_role": "main_effect",
+      "reason": "장소의 특성 활용이 실제로 작품의 의미 완성에 어떻게 기여하는지, 즉 장소가 결정적 역할을 한다는 점을 통해 문단의 중심 효과를 제시한다. 문단의 결론적 귀결에 해당하며, 문단의 논리 구조상 매우 중요하다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "장소 특정성 = 장소에서 떼어내면 의미 퇴색",
+      "importance_score": 0.78,
+      "normalized_score": 0.87,
+      "importance_role": "limitation_basis",
+      "reason": "장소 특정성의 본질적 특성을 설명하며, 그라피티 메시지 전달 방식의 한계와 조건을 드러내는 핵심 관계이다. 문단의 중심 논지에 직접 연결되지만, C1·C2에 비해 약간 보조적이다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.53,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "paragraph_anchor_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "passage_anchor": {
+    "central_object": "문화",
+    "main_axis_type": "비교형",
+    "main_axis": "화이트의 문화 발전 원리 ↔ 반 퍼슨의 문화 형성 원리 → 문화의 본질과 변화 방식의 차이",
+    "passage_thesis": "문화는 인간이 환경에 적응하거나 세계를 이해하는 방식에 따라 구조적 발전 또는 사고 유형의 상호작용으로 형성·변화하는 역동적 체계임이 두 이론을 통해 드러난다."
+  },
+  "paragraph_role": {
+    "role_type": "용어 주석",
+    "role_name": "핵심 용어 정의",
+    "role_in_passage_axis": "문화 발전/형성 원리 설명에 필요한 과학적 개념(엔트로피) 정의 제공",
+    "evidence_quote": "* 엔트로피: 열의 이동과 더불어 유효하게 이용할 수 있는 에너지의 감소 정도를 나타내는 양."
+  },
+  "paragraph_focus": {
+    "central_relation": "엔트로피 = 유효 에너지 감소 정도",
+    "must_preserve": [
+      {
+        "item": "엔트로피 = 유효하게 이용할 수 있는 에너지의 감소 정도",
+        "reason": "문화 발전/형성 원리 설명에서 엔트로피 개념의 정확한 의미를 이해하는 것이 필수적이기 때문",
+        "evidence_quote": "엔트로피: 열의 이동과 더불어 유효하게 이용할 수 있는 에너지의 감소 정도를 나타내는 양."
+      }
+    ],
+    "secondary": [
+      {
+        "item": "엔트로피는 열의 이동과 관련됨",
+        "reason": "엔트로피의 정의를 보조적으로 설명하는 배경 정보로, 중심 역할에는 직접적이지 않음",
+        "evidence_quote": "엔트로피: 열의 이동과 더불어 유효하게 이용할 수 있는 에너지의 감소 정도를 나타내는 양."
+      }
+    ]
+  },
+  "notes": {
+    "problem_independent": true,
+    "use_for": "paragraph_gold_alignment",
+    "avoid": [
+      "문항 기반 선별",
+      "문단별 단순 요약",
+      "배경지식",
+      "가치판단",
+      "과도한 세부 정보"
+    ]
+  }
+}

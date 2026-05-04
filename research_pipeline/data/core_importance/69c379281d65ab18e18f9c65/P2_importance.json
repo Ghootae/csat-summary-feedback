@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P2",
+  "para_order": 2,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "수직 접촉-분리 방식 → 전자 친화도 차이",
+      "importance_score": 0.75,
+      "normalized_score": 0.833,
+      "importance_role": "main_mechanism",
+      "reason": "이 slot은 문단의 중심 원리 전개의 출발점으로, 수직 접촉-분리 방식이라는 구조적 특성이 이후 전자 이동 및 전기 발생의 핵심 메커니즘을 여는 역할을 한다. 하지만 실제 전자 이동과 표면 전하 형성에 비해 직접적 귀결 단계는 아니므로 약간 낮게 부여함."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "전자 친화도 차이 → 전자 이동(B→A)",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "main_mechanism",
+      "reason": "전자 친화도 차이에 의해 전자가 이동하는 과정은 문단의 중심 메커니즘이자 전류 발생의 직접적 원인으로, 이 slot이 없으면 문단의 핵심 논리가 무너진다. 문단 내에서 가장 중심적인 역할을 함."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "전자 이동(B→A) → 접촉면에 반대 부호 표면 전하 형성",
+      "importance_score": 0.85,
+      "normalized_score": 0.944,
+      "importance_role": "main_effect",
+      "reason": "전자 이동의 결과로 표면 전하가 형성되는 단계는 전기 발생의 본질적 귀결로, 문단의 중심축에서 직접 도출되는 효과이다. 다만, 전자 이동이라는 메커니즘이 더 직접적이므로 약간 낮게 부여함."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.5,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

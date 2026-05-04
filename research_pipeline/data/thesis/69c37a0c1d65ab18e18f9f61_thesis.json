@@ -1,0 +1,62 @@
+{
+  "schema_version": "passage_thesis_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "language": "ko",
+  "central_object": {
+    "text": "그라피티",
+    "evidence_quote": "그라피티란 공공장소에 낙서처럼 그려진 글자나 그림을 말한다."
+  },
+  "main_axis_type": "변화형",
+  "main_axis": "저항적 낙서 행위 → 예술적 기법과 메시지 도입 → 공공 예술로 인정",
+  "passage_thesis": "그라피티는 저항적 낙서에서 출발해 예술적 기법과 사회적 메시지를 도입함으로써 현대 사회의 문제를 조명하는 공공 예술 장르로 변화하였다.",
+  "supporting_axes": [
+    {
+      "axis_id": "A1",
+      "text": "장소 특정성을 활용한 메시지 전달",
+      "evidence_quote": "장소 자체가 작품의 의미를 완성하는 데 결정적 요소로 작용하는 것을 장소 특정성이라고 한다."
+    }
+  ],
+  "paragraph_role_hints": [
+    {
+      "para_id": "P1",
+      "role": "기원 및 성격 제시",
+      "role_summary": "그라피티의 정의와 저항적 기원을 밝힌다.",
+      "evidence_quote": "기존 질서에 저항한 것에서 비롯되었다."
+    },
+    {
+      "para_id": "P2",
+      "role": "초기 형태와 한계",
+      "role_summary": "초기 태그 중심의 그라피티와 그 한계를 설명한다.",
+      "evidence_quote": "단순히 이름이나 별명을 적는 행위에 불과했던 그라피티를 비판적으로 인식했다."
+    },
+    {
+      "para_id": "P3",
+      "role": "예술적 발전과 기법 도입",
+      "role_summary": "사회적 메시지와 예술적 기법 도입을 통한 발전을 다룬다.",
+      "evidence_quote": "작품에 사회적 메시지를 담아내기 위해 다양한 기법을 도입하였다."
+    },
+    {
+      "para_id": "P4",
+      "role": "장소 특정성의 의의",
+      "role_summary": "장소 특정성을 통한 메시지 전달 방식을 설명한다.",
+      "evidence_quote": "장소 자체가 작품의 의미를 완성하는 데 결정적 요소로 작용하는 것을 장소 특정성이라고 한다."
+    },
+    {
+      "para_id": "P5",
+      "role": "최종 변화와 의의",
+      "role_summary": "그라피티의 변화와 공공 예술로서의 의의를 제시한다.",
+      "evidence_quote": "그라피티는 현대 사회의 다양한 문제를 조명하는 공공 예술 장르로 인정받게 되었다."
+    }
+  ],
+  "notes": {
+    "problem_independent": true,
+    "use_for": "paragraph_gold_alignment",
+    "avoid": [
+      "문항 기반 선별",
+      "문단별 내용 나열",
+      "배경지식",
+      "가치판단",
+      "과도한 세부 정보"
+    ]
+  }
+}

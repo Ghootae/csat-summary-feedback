@@ -1,0 +1,64 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P2",
+  "para_order": 2,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "태그 중심 그라피티 → 조형적 복잡화/화려함",
+      "importance_score": 0.8,
+      "normalized_score": 0.842,
+      "importance_role": "core_transition",
+      "reason": "초기 그라피티의 변화(조형적 전환)는 이후 대중 인식 한계와 비평가의 비판, 결론적 평가로 이어지는 중심 고리로서, 문단의 전개에서 핵심 전환점 역할을 한다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "글자: 읽는 대상 → 보는 대상으로 전환",
+      "importance_score": 0.75,
+      "normalized_score": 0.789,
+      "importance_role": "core_transition",
+      "reason": "조형적 변화의 구체적 핵심으로, 대중 인식 한계 및 비평가의 비판의 직접적 배경이 되는 전환점이다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "복잡화된 태그 → 대중 인식 한계",
+      "importance_score": 0.78,
+      "normalized_score": 0.821,
+      "importance_role": "main_effect",
+      "reason": "조형적 변화의 결과로 대중이 의미를 인식하지 못하는 한계가 드러나며, 이는 비평가의 비판과 결론적 평가로 이어지는 필수적 효과이다."
+    },
+    {
+      "slot_id": "C4",
+      "core_text": "단순 태그 행위 → 비평가의 비판",
+      "importance_score": 0.82,
+      "normalized_score": 0.863,
+      "importance_role": "limitation_basis",
+      "reason": "비평가의 비판은 문단 결론의 직접적 근거로, 앞선 변화와 한계 인식이 결집되는 핵심 고리이다."
+    },
+    {
+      "slot_id": "C5",
+      "core_text": "비평가의 비판 → '비가시적, 텅 빈' 평가",
+      "importance_score": 0.95,
+      "normalized_score": 1.0,
+      "importance_role": "conclusion",
+      "reason": "문단의 최종 귀결로, 앞선 변화와 비판의 결과를 집약하는 결론적 평가이다. 이 slot이 빠지면 문단의 중심 역할이 무너진다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 4.1,
+    "max_score": 0.95,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

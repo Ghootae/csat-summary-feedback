@@ -1,0 +1,10 @@
+[
+  {
+    "passage_id": "69c379ca2b1d79e62e2e2a6e",
+    "para_id": "P2",
+    "title": "골격근 P2",
+    "paragraph_text": "골격근은 지레의 작용을 통해 힘을 전달한다. 지레는 무거운 물건을 움직이는 데에 쓰는 막대기이다. 여기서 막대기를 고정하는 곳을 받침점, 힘을 가하는 곳을 힘점, 지레를 통해 힘이 미치는 곳을 작용점이라고 한다. 인체에서는 뼈와 뼈가 맞닿아 연결되는 곳인 관절이 받침점, 뼈에 힘을 가하는 힘줄의 끝부분이 힘점, 힘이 미치는 곳이 작용점이 된다. 이러한 지레는 받침점, 힘점, 작용점의 위치에 따라 종류가 구분된다.",
+    "gold_path": "data/golds/69c379ca2b1d79e62e2e2a6e/P2_gold.json",
+    "importance_path": "data/core_importance/69c379ca2b1d79e62e2e2a6e/P2_importance.json"
+  }
+]

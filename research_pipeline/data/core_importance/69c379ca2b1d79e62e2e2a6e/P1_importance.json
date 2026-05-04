@@ -1,0 +1,40 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "골격근 = 인체 운동 실행 기관",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "topic_anchor",
+      "reason": "이 문단의 중심 대상이자 이후 모든 설명(구조, 원리, 효과)의 출발점이 되는 핵심 규정이다. 골격근이 인체 운동을 실행하는 기관임을 밝히는 것이 문단의 주제 제시 및 전체 흐름의 첫 고리로 기능한다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "골격근 → 운동 실행 원리 탐구 제기",
+      "importance_score": 0.85,
+      "normalized_score": 0.94,
+      "importance_role": "core_transition",
+      "reason": "문단의 역할이 단순 정보 제시가 아니라, 골격근의 운동 실행 원리에 대한 탐구를 출발시키는 데 있다. 중심 대상(골격근)의 역할 규정에서 원리 탐구로 전환하는 핵심 고리로, 이후 문단 전개(원리 설명)의 방향성을 결정한다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 1.75,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P2",
+  "para_order": 2,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "기술적 체계 변화 → 사회적 체계 변화",
+        "source_items": [
+          "기술적 체계 변화 → 사회적 체계 변화"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "사회적 체계 변화 → 관념적 체계 변화",
+        "source_items": [
+          "사회적 체계 변화 → 관념적 체계 변화"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "관념적 체계 변화 → 문화 발전",
+        "source_items": [
+          "관념적 체계 변화 → 문화 발전"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "기술적 체계 = 인간이 환경에 적응하기 위해 사용하는 물질적 수단",
+        "source_items": [
+          "기술적 체계 = 인간이 환경에 적응하기 위해 사용하는 물질적 수단"
+        ]
+      },
+      {
+        "slot_id": "O2",
+        "text": "사회적 체계 = 기술적 체계를 사용하기 위해 사회를 조직화하는 방식",
+        "source_items": [
+          "사회적 체계 = 기술적 체계를 사용하기 위해 사회를 조직화하는 방식"
+        ]
+      },
+      {
+        "slot_id": "O3",
+        "text": "관념적 체계 = 기술적·사회적 체계의 영향을 받아 형성된 사상, 신념, 규범 등",
+        "source_items": [
+          "관념적 체계 = 기술적·사회적 체계의 영향을 받아 형성된 사상, 신념, 규범 등"
+        ]
+      },
+      {
+        "slot_id": "O4",
+        "text": "물을 끌어 쓰는 기술 → 농사 → 역할 분담 사회 → 협력 덕목 → 농경 문화 정착",
+        "source_items": [
+          "물을 끌어 쓰는 기술 → 농사 → 역할 분담 사회 → 협력 덕목 → 농경 문화 정착"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}
