@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { buildStatusCards } from "@/lib/panel-helpers";
 import { DiagnoseApiResponse, ParagraphManifestItem, Phase } from "@/lib/types";
 
@@ -16,6 +16,12 @@ export default function DiagnoseForm({ items }: Props) {
 
   const selected = items.find((x) => `${x.passage_id}::${x.para_id}` === selectedKey);
   const cards = useMemo(() => (result ? buildStatusCards(result) : []), [result]);
+
+  useEffect(() => {
+    setResult(null);
+    setError("");
+    setPhase("INPUT_V0");
+  }, [selectedKey]);
 
   function addResponseInput() {
     setResponses((prev) => [...prev, ""]);
@@ -41,8 +47,8 @@ export default function DiagnoseForm({ items }: Props) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          passage_id: selected?.passage_id,
-          para_id: selected?.para_id,
+          passage_id: selected?.passage_id ?? "",
+          para_id: selected?.para_id ?? "",
           student_summary: compact.join(" / ")
         })
       });
