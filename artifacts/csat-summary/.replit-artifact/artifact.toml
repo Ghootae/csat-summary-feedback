@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "CSAT Summary Diagnose"
+version = "1.0.0"
+id = "artifacts/csat-summary"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21806
+
+[services.development]
+run = "pnpm --filter @workspace/csat-summary run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/csat-summary", "run", "build" ]
+publicDir = "artifacts/csat-summary/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21806"
+BASE_PATH = "/"
