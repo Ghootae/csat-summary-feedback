@@ -28,9 +28,9 @@ router.post("/diagnose", async (req, res) => {
       return;
     }
 
-    const dataRoot = path.resolve(import.meta.dirname, "..", "..", "data");
-    const goldPath = path.join(dataRoot, selected.gold_path);
-    const importancePath = path.join(dataRoot, selected.importance_path);
+    const artifactRoot = path.resolve(import.meta.dirname, "..");
+    const goldPath = path.join(artifactRoot, selected.gold_path);
+    const importancePath = path.join(artifactRoot, selected.importance_path);
     const [goldRaw, importanceRaw] = await Promise.all([
       fs.readFile(goldPath, "utf-8"),
       fs.readFile(importancePath, "utf-8")
