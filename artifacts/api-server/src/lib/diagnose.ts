@@ -3,7 +3,7 @@ import path from "node:path";
 import OpenAI from "openai";
 import { CoreDiagnosisResult, CompressionResult } from "./types";
 
-const ROOT = path.resolve(import.meta.dirname, "..");
+const ARTIFACT_ROOT = process.cwd();
 
 function extractJson(raw: string): unknown {
   const cleaned = raw.trim();
@@ -13,7 +13,7 @@ function extractJson(raw: string): unknown {
 }
 
 async function readPrompt(filename: string): Promise<string> {
-  const localPath = path.join(ROOT, "data", "prompts", filename);
+  const localPath = path.join(ARTIFACT_ROOT, "data", "prompts", filename);
   return await fs.readFile(localPath, "utf-8");
 }
 

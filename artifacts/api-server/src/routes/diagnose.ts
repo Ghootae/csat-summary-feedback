@@ -28,7 +28,7 @@ router.post("/diagnose", async (req, res) => {
       return;
     }
 
-    const artifactRoot = path.resolve(import.meta.dirname, "..");
+    const artifactRoot = process.cwd();
     const goldPath = path.join(artifactRoot, selected.gold_path);
     const importancePath = path.join(artifactRoot, selected.importance_path);
     const [goldRaw, importanceRaw] = await Promise.all([
