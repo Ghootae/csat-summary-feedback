@@ -1,6 +1,39 @@
 @import "tailwindcss";
 
+:root {
+  --bg: #f0f2f5;
+  --surface: #ffffff;
+  --border: #e2e6ea;
+  --text-primary: #1a1d23;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --blue-main: #3b5bdb;
+  --blue-light: #dbe4ff;
+  --green-main: #2f9e44;
+  --green-light: #d3f9d8;
+  --purple-main: #7048e8;
+  --purple-light: #e5dbff;
+  --header-h: 48px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  background-color: rgb(248 250 252);
-  color: rgb(15 23 42);
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+  outline: none;
 }

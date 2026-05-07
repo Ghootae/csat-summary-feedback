@@ -19,9 +19,7 @@ async function readPrompt(filename: string): Promise<string> {
 
 async function runJsonPrompt(prompt: string, input: Record<string, unknown>): Promise<unknown> {
   const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    throw new Error("OPENAI_API_KEY environment variable is not set.");
-  }
+  if (!apiKey) throw new Error("OPENAI_API_KEY environment variable is not set.");
 
   const client = new OpenAI({ apiKey });
   const response = await client.responses.create({
@@ -32,8 +30,7 @@ async function runJsonPrompt(prompt: string, input: Record<string, unknown>): Pr
     ]
   });
 
-  const text = response.output_text;
-  return extractJson(text);
+  return extractJson(response.output_text);
 }
 
 export async function runDiagnosis(payload: {
@@ -55,16 +52,16 @@ export async function runDiagnosis(payload: {
   const missingSlots = Array.isArray(core.missing_slots) ? core.missing_slots : [];
   const status = compression.compression_status;
 
-  let final_status = "PASS";
+  let final_decision = "PASS";
   if (status === "NOT_SUMMARY") {
-    final_status = "FORM_INVALID";
+    final_decision = "FORM_INVALID";
   } else if (missingSlots.length > 0) {
-    final_status = "NEEDS_REPAIR";
+    final_decision = "NEEDS_REPAIR";
   } else if (status === "OVER_DETAILED") {
-    final_status = "NEEDS_COMPRESSION";
+    final_decision = "NEEDS_COMPRESSION";
   } else if (status === "COMPACT" || status === "ACCEPTABLE") {
-    final_status = "PASS";
+    final_decision = "PASS";
   }
 
-  return { final_status, core_diagnosis: core, compression };
+  return { final_decision, core_diagnosis: core, compression_assessment: compression };
 }
