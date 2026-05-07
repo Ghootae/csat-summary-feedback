@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P2",
+  "para_order": 2,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "태그 → 복잡한 형태·화려한 색채로 변형 → 글자가 읽는 대상에서 보는 대상으로 전환",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "main_mechanism",
+      "reason": "문단의 중심 전환 관계(태그의 시각적 변형 → 글자의 기능 전환)를 직접 제시한다. passage의 핵심 흐름인 그라피티의 예술적 발전 과정에서 이 slot이 빠지면 이후 주목과 비판 평가로 이어지는 인과 구조 전체가 무너진다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "조형적 요소 강조 → 그라피티가 주목을 받음",
+      "importance_score": 0.75,
+      "normalized_score": 0.833,
+      "importance_role": "main_mechanism",
+      "reason": "C1의 전환 결과로서 그라피티가 사회적 주목을 받게 되는 인과 관계를 완성한다. C1과 함께 읽어야 1970년대 그라피티 발전의 긍정적 결과가 드러나며, 이후 C3의 비판 평가와 대비 구조를 형성하는 데 필수적이다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "비평가: 개인 사유 결여 → '비가시적·텅 비었다' 평가",
+      "importance_score": 0.8,
+      "normalized_score": 0.889,
+      "importance_role": "evaluative_conclusion",
+      "reason": "문단의 결론적 평가 관계로, 1970년대 그라피티의 한계를 비평가 시각에서 요약한다. 이 slot은 P3의 1980년대 변화(사회적 메시지 도입)로 이어지는 전환점이며, passage 전체의 논리 흐름에서 핵심 대조 구조를 담당한다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.45,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}
