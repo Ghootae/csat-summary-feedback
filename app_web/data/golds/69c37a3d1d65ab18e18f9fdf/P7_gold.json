@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P7",
+  "para_order": 7,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "세계 = 인간을 압도하는 거대한 힘",
+        "source_items": [
+          "세계 = 인간을 압도하는 거대한 힘으로 인식"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "거대한 힘 → 상징적 의미 부여",
+        "source_items": [
+          "거대한 힘에 상징적 의미 부여"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "상징적 의미 부여 → 질서/안정 확보",
+        "source_items": [
+          "상징적 의미 부여 → 삶의 질서와 안정감 확보"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "기우제 문화 = 신화적 사고의 사례",
+        "source_items": [
+          "기우제 문화의 예시"
+        ]
+      },
+      {
+        "slot_id": "O2",
+        "text": "가뭄 위기 해결 → 공동체 안정 도모",
+        "source_items": [
+          "가뭄으로 인한 사회 위기와 공동체 안정 도모"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

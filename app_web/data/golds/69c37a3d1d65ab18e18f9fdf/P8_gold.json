@@ -1,0 +1,52 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P8",
+  "para_order": 8,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "존재론적 사고 = 세계의 본질을 이성적으로 규명",
+        "source_items": [
+          "존재론적 사고 = 세계의 본질을 이성적으로 규명하려는 사고방식"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "존재론적 사고 → 과학적 원인 규명",
+        "source_items": [
+          "존재론적 사고 → 과학적 원인 규명"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "과학적 원인 규명 → 문화적 실천",
+        "source_items": [
+          "과학적 원인 규명 → 문화적 실천(예: 병원 이용)"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "감염병 치료 문화 = 존재론적 사고의 적용 사례",
+        "source_items": [
+          "감염병 치료 문화의 구체적 사례"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

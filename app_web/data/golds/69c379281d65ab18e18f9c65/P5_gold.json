@@ -1,0 +1,45 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "유효 접촉 면적 확대 → 실제 접촉점 증가",
+        "source_items": [
+          "유효 접촉 면적 확대 → 실제 접촉점 증가"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "실제 접촉점 증가 → 마찰 전기 나노 발전기 성능 향상",
+        "source_items": [
+          "실제 접촉점 증가 → 마찰 전기 나노 발전기 성능 향상"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "평평해 보이는 물체도 일부 지점만 접촉",
+        "source_items": [
+          "평평해 보이는 물체도 미세하게 보면 일부 지점만 접촉"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

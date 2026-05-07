@@ -1,0 +1,30 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379001d65ab18e18f9c12",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "멸실 = 재난에 의해 물건의 가치 상실",
+        "source_items": [
+          "멸실 = 재난에 의해 물건의 가치가 상실될 정도로 심하게 파손됨"
+        ]
+      }
+    ],
+    "optional_slots": []
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

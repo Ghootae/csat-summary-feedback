@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "환경 적응 필요 → 문화 창출",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "topic_anchor",
+      "reason": "화이트 이론의 문화 정의이자, 문화가 왜 생겨났는지에 대한 근본 원인을 제시하여 문단의 출발점이 됨. 이후 모든 설명의 논리적 기초로 작용하며, 이 고리가 빠지면 문단의 중심 역할이 크게 훼손됨."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "문화 → 기술적/사회적/관념적 체계",
+      "importance_score": 0.75,
+      "normalized_score": 0.83,
+      "importance_role": "definition_core",
+      "reason": "화이트 이론의 문화 구조를 구체적으로 제시하는 부분으로, 발전 원리 설명의 토대가 됨. 문단의 중심 흐름을 이어가는 데 필수적이지만, 출발점이나 최종 귀결보다는 한 단계 낮은 중심성."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "문화의 층위 세분화 → 문화 발전 원리 설명",
+      "importance_score": 0.85,
+      "normalized_score": 0.94,
+      "importance_role": "core_transition",
+      "reason": "문화 구조(층위 세분화)에서 발전 원리 설명으로 넘어가는 핵심 전환 고리로, 이후 비교의 기준이 됨. 문단의 논리적 완결성과 중심 관계를 완성하는 역할을 하므로 매우 중요함."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.5,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

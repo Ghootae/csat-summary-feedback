@@ -1,0 +1,52 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379001d65ab18e18f9c12",
+  "para_id": "P4",
+  "para_order": 4,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "위험 이전 시점 → 물품 부적합 책임 판단 기준",
+        "source_items": [
+          "위험 이전 시점 → 물품 부적합 책임 판단 기준"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "물품 부적합이 위험 이전 시점 전에 존재 → 매도인 책임",
+        "source_items": [
+          "물품 부적합이 위험 이전 시점 전에 존재 → 매도인 책임"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "매수인 → 수령한 물품의 계약 합치 여부 확인 의무",
+        "source_items": [
+          "매수인 → 수령한 물품의 계약 합치 여부 확인 의무"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "물품 부적합 = 물품이 계약 내용이나 법적 안전 기준에 맞지 않는 상태",
+        "source_items": [
+          "물품 부적합 = 물품이 계약 내용이나 법적 안전 기준에 맞지 않는 상태"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

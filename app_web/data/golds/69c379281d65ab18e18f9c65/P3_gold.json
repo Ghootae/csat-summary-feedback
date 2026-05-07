@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P3",
+  "para_order": 3,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "두 물질 분리 → 전위차 발생",
+        "source_items": [
+          "두 물질 분리 → 전위차 발생"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "전위차 발생 → 전자 이동(A→B) → 전류 발생",
+        "source_items": [
+          "전위차 발생 → 전자 이동(A→B) → 전류 발생"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "접촉–분리 반복 → 전류 방향 주기적 반전(교류 발생)",
+        "source_items": [
+          "접촉–분리 반복 → 전류 방향 주기적 반전(교류 발생)"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "전류의 방향 = 전자 이동 방향 반대",
+        "source_items": [
+          "전류의 방향은 전자 이동 방향과 반대"
+        ]
+      },
+      {
+        "slot_id": "O2",
+        "text": "전류의 양·음 값 측정",
+        "source_items": [
+          "전류의 양·음 값 측정"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P8",
+  "para_order": 8,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "존재론적 사고 = 세계의 본질을 이성적으로 규명",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "definition_core",
+      "reason": "존재론적 사고의 정의는 문단의 중심 대상이자 이후 모든 관계의 출발점으로, 문단의 핵심 역할을 성립시키는 가장 중요한 고리임."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "존재론적 사고 → 과학적 원인 규명",
+      "importance_score": 0.85,
+      "normalized_score": 0.94,
+      "importance_role": "main_mechanism",
+      "reason": "존재론적 사고가 실제로 문제 해결 방식에 어떻게 연결되는지 설명하는 핵심 메커니즘으로, 문단 중심 흐름의 필수 연결 고리임."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "과학적 원인 규명 → 문화적 실천",
+      "importance_score": 0.75,
+      "normalized_score": 0.83,
+      "importance_role": "main_effect",
+      "reason": "존재론적 사고와 과학적 원인 규명이 실제 문화적 실천(예: 병원 이용)으로 이어지는 결과적 고리로, 문단의 중심 관계를 완성하지만 앞선 두 slot에 비해 상대적으로 보조적임."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.5,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

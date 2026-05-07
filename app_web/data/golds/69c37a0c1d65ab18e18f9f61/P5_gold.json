@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "저항적 낙서 행위 → 다양한 방식 활용",
+        "source_items": [
+          "저항적 낙서 행위 → 다양한 방식 활용"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "다양한 방식 활용 → 메시지 효과적 형상화",
+        "source_items": [
+          "다양한 방식 활용 → 메시지 효과적 형상화"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "메시지 효과적 형상화 → 공공 예술로 인정",
+        "source_items": [
+          "메시지 효과적 형상화 → 공공 예술로 인정"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "저항 정신에 기반한 낙서 행위",
+        "source_items": [
+          "저항 정신에 기반한 낙서 행위에 불과했던 그라피티"
+        ]
+      },
+      {
+        "slot_id": "O2",
+        "text": "현대 사회의 다양한 문제를 조명",
+        "source_items": [
+          "현대 사회의 다양한 문제를 조명"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

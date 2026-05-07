@@ -1,0 +1,73 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P4",
+  "para_order": 4,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "근육 원섬유 = 골격근 수축의 구조적 단위",
+        "source_items": [
+          "근육 원섬유 = 골격근 수축의 구조적 단위"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "근육 원섬유 → 액틴 필라멘트/마이오신 필라멘트로 구성",
+        "source_items": [
+          "근육 원섬유는 액틴 필라멘트와 마이오신 필라멘트로 구성됨"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "명대 = 액틴 필라멘트만 있는 구간",
+        "source_items": [
+          "명대 = 액틴 필라멘트만 있는 구간 / 암대 = 마이오신 필라멘트가 있는 구간"
+        ]
+      },
+      {
+        "slot_id": "C4",
+        "text": "암대 = 마이오신 필라멘트가 있는 구간",
+        "source_items": [
+          "명대 = 액틴 필라멘트만 있는 구간 / 암대 = 마이오신 필라멘트가 있는 구간"
+        ]
+      },
+      {
+        "slot_id": "C5",
+        "text": "H대 = 암대 중 마이오신 필라멘트만 있는 구간",
+        "source_items": [
+          "H대 = 암대 중 마이오신 필라멘트만 있는 구간"
+        ]
+      },
+      {
+        "slot_id": "C6",
+        "text": "Z선 = 액틴 필라멘트를 이어 주는 선 / 근육 원섬유 마디 = Z선과 Z선 사이",
+        "source_items": [
+          "Z선 = 액틴 필라멘트를 서로 이어 주는 선 / 근육 원섬유 마디 = Z선과 Z선 사이"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "명대/암대 구분은 전자 현미경 관찰로 확인",
+        "source_items": [
+          "전자 현미경 관찰 시 명대와 암대의 구분"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

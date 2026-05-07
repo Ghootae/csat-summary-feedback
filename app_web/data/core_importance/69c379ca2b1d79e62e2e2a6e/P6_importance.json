@@ -1,0 +1,64 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P6",
+  "para_order": 6,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "ATP/크레아틴 인산 저장 → 초기 에너지 공급",
+      "importance_score": 0.72,
+      "normalized_score": 0.81,
+      "importance_role": "main_mechanism",
+      "reason": "에너지 공급 과정의 출발점이자, 골격근 수축의 즉각적 에너지 제공 고리로서 중심 메커니즘의 첫 단계이다. 하지만 이후 단계(산소 공급, 추가 ATP 생산)에 비해 전체 과정의 일부이므로 약간 낮게 부여함."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "산소 공급 → 포도당/지방산 분해 → 추가 ATP 생산",
+      "importance_score": 0.88,
+      "normalized_score": 0.99,
+      "importance_role": "main_mechanism",
+      "reason": "격한 운동 시 에너지 공급의 주된 경로이자, 효율적 ATP 생산의 핵심 조건을 담당한다. 문단의 중심 메커니즘으로, 산소 공급이 전체 원리의 핵심 연결고리이므로 매우 높게 부여함."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "산소 부족 → ATP 생산 저하/젖산 발생 → 근육 피로",
+      "importance_score": 0.84,
+      "normalized_score": 0.94,
+      "importance_role": "limitation_basis",
+      "reason": "산소 공급 조건의 변화가 에너지 생산 효율 저하와 피로로 이어지는 핵심 전환 및 한계 근거를 담당한다. 메커니즘의 필수적 고리이자, 결과적 한계를 드러내므로 매우 중요하다."
+    },
+    {
+      "slot_id": "C4",
+      "core_text": "운동 후 ATP/크레아틴 인산 재합성·젖산 분해 → 산소 필요",
+      "importance_score": 0.75,
+      "normalized_score": 0.84,
+      "importance_role": "main_mechanism",
+      "reason": "운동 후 회복 과정에서 에너지 저장과 노폐물 제거에 산소가 필수적임을 드러내며, 에너지 공급 원리의 완결을 담당한다. 운동 중 과정에 비해 약간 보조적이지만 여전히 중심 메커니즘이다."
+    },
+    {
+      "slot_id": "C5",
+      "core_text": "에너지 공급 과정 → 운동 중·후 호흡 변화",
+      "importance_score": 0.89,
+      "normalized_score": 1.0,
+      "importance_role": "conclusion",
+      "reason": "에너지 공급 원리의 결과가 인체 운동 현상(호흡 변화)으로 나타남을 연결하는 귀결 고리로, 문단의 결론적 역할을 담당한다. 문단 전체의 중심 귀결이므로 최고 점수를 부여함."
+    }
+  ],
+  "normalization": {
+    "sum_score": 4.08,
+    "max_score": 0.89,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

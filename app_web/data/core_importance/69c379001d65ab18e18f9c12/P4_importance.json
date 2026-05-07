@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379001d65ab18e18f9c12",
+  "para_id": "P4",
+  "para_order": 4,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "위험 이전 시점 → 물품 부적합 책임 판단 기준",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "topic_anchor",
+      "reason": "문단의 중심 관계이자 전체 구조의 출발점으로, 위험 이전 시점이 책임 판단의 기준이 됨을 명확히 하여 문단의 중심 역할을 성립시킨다. 이 slot이 빠지면 문단의 핵심 논지가 무너진다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "물품 부적합이 위험 이전 시점 전에 존재 → 매도인 책임",
+      "importance_score": 0.82,
+      "normalized_score": 0.91,
+      "importance_role": "main_mechanism",
+      "reason": "책임 귀속의 구체적 조건을 제시하여 문단의 핵심 메커니즘을 구성한다. 중심 관계의 직접적 전개로, 결론의 근거가 된다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "매수인 → 수령한 물품의 계약 합치 여부 확인 의무",
+      "importance_score": 0.75,
+      "normalized_score": 0.83,
+      "importance_role": "supporting_core",
+      "reason": "책임 귀속을 위해 매수인에게 요구되는 핵심 의무로, 문단의 중심 역할을 보조한다. 다른 core에 비해 직접적 결론은 아니나, 문단의 논리적 완결성을 위해 반드시 필요하다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.47,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

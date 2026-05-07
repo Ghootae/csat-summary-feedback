@@ -1,0 +1,66 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "골격근 = 인체 운동 실행 기관",
+        "source_items": [
+          "골격근 = 인체의 운동을 실행하는 기관"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "골격근 → 운동 실행 원리 탐구 제기",
+        "source_items": [
+          "골격근을 통해 운동이 실행되는 원리 탐구 제기"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "골격근은 힘줄을 통해 뼈에 부착",
+        "source_items": [
+          "골격근은 힘줄을 통해 뼈에 부착되어 있다"
+        ]
+      },
+      {
+        "slot_id": "O2",
+        "text": "골격근 → 힘 생성",
+        "source_items": [
+          "골격근이 힘을 만들어낸다"
+        ]
+      },
+      {
+        "slot_id": "O3",
+        "text": "골격근은 이완 불가",
+        "source_items": [
+          "골격근의 힘 생성 및 이완 불가"
+        ]
+      },
+      {
+        "slot_id": "O4",
+        "text": "이두근/삼두근 수축·이완 예시",
+        "source_items": [
+          "이두근·삼두근의 수축과 이완 예시"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379001d65ab18e18f9c12",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "멸실 = 재난에 의해 물건의 가치 상실",
+      "importance_score": 0.92,
+      "normalized_score": 1.0,
+      "importance_role": "definition_core",
+      "reason": "'멸실'의 정의는 본 문단의 중심 역할(핵심 용어 정의)이며, 이후 위험 이전의 기준과 방식 설명 및 손해·책임 귀속 논의의 전제 용어로 기능하므로 문단 내에서 가장 중심적인 핵심 관계임."
+    }
+  ],
+  "normalization": {
+    "sum_score": 0.92,
+    "max_score": 0.92,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

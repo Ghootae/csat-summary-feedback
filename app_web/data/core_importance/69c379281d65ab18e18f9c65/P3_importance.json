@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P3",
+  "para_order": 3,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "두 물질 분리 → 전위차 발생",
+      "importance_score": 0.75,
+      "normalized_score": 0.833,
+      "importance_role": "main_mechanism",
+      "reason": "전류 발생의 출발점이 되는 핵심 원인 관계로, 이후 전자의 이동과 전류 발생 설명의 전제가 되며, 문단 중심 메커니즘의 첫 고리임."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "전위차 발생 → 전자 이동(A→B) → 전류 발생",
+      "importance_score": 0.85,
+      "normalized_score": 0.944,
+      "importance_role": "main_mechanism",
+      "reason": "전위차에 의해 전자가 이동하고, 이로 인해 전류가 흐르는 과정은 전류 발생 원리의 중심 단계로, 문단의 중심축을 이루는 핵심 메커니즘임."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "접촉–분리 반복 → 전류 방향 주기적 반전(교류 발생)",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "conclusion",
+      "reason": "접촉–분리 과정이 반복될 때 전류 방향이 주기적으로 바뀌는 현상은 본 문단의 최종 귀결이자 중심 결론으로, 문단의 핵심 역할을 완성함."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.5,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}
