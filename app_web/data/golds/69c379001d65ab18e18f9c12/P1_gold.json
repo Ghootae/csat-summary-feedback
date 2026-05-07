@@ -1,0 +1,45 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379001d65ab18e18f9c12",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "물품 매매 계약 이행 중 책임 없는 손해 발생 → 위험 부담 문제 발생",
+        "source_items": [
+          "물품 매매 계약 이행 중 양 당사자의 책임이 없는 사유로 손해 발생 → 위험 부담 문제 발생"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "국내(민법)/국제(CISG) → 위험 부담 기준 존재",
+        "source_items": [
+          "국내(민법)와 국제(CISG) 모두 위험 부담 문제에 대한 기준을 가지고 있음"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "우리나라 민법상 위험 부담 귀속 기준(매도인/매수인 부담 조건)",
+        "source_items": [
+          "우리나라 민법상 위험 부담 귀속 기준(매도인/매수인 부담 조건)"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

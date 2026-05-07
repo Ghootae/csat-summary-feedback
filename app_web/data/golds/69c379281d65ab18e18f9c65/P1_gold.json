@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "전자 친화도 차이 + 접촉 → 전자 이동",
+        "source_items": [
+          "전자 친화도가 다른 두 물질의 접촉 → 전자 친화도가 큰 물질로 전자 이동"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "전자 이동 → (+)/(-) 표면 전하 분리",
+        "source_items": [
+          "전자 이동 → 한쪽에 (+), 다른 쪽에 (-) 표면 전하 형성"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "표면 전하 분리 → 전류 발생",
+        "source_items": [
+          "이 원리에 기반하여 전류 발생"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "물질 = 원자핵(+) + 전자(-)로 구성",
+        "source_items": [
+          "물질은 양전하를 띠는 원자핵과 음전하를 띠는 전자로 구성된 원자로 이루어짐"
+        ]
+      },
+      {
+        "slot_id": "O2",
+        "text": "비닐/유리 → 전자 친화도 예시",
+        "source_items": [
+          "비닐은 유리보다 전자 친화도가 크다(예시)"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "에너지 공급 → 마이오신 머리의 액틴 결합(구름다리 형성)",
+      "importance_score": 0.85,
+      "normalized_score": 0.944,
+      "importance_role": "main_mechanism",
+      "reason": "수축 과정의 출발점이자, 에너지 의존적 결합이 수축의 핵심 기전임을 보여주는 단계로, 이후 모든 메커니즘의 전제가 된다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "마이오신 머리 회전 → 액틴 필라멘트 이동",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "main_mechanism",
+      "reason": "힘 발생과 필라멘트 이동의 직접적 원인으로, 실제 수축이 일어나는 핵심 단계이자 문단의 중심 메커니즘이다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "구름다리 형성 및 분해 반복 → 액틴 필라멘트가 마이오신 필라멘트 사이로 미끄러져 들어감",
+      "importance_score": 0.88,
+      "normalized_score": 0.978,
+      "importance_role": "main_mechanism",
+      "reason": "수축이 반복적 결합/분해로 이루어짐을 보여주는 핵심 메커니즘으로, 전체 수축 원리의 귀결이자 반복적 작동 방식의 설명이다."
+    },
+    {
+      "slot_id": "C4",
+      "core_text": "마이오신 머리의 결합 수 증가 → 발생 힘 증가",
+      "importance_score": 0.75,
+      "normalized_score": 0.833,
+      "importance_role": "main_effect",
+      "reason": "수축 과정에서 힘의 크기를 결정하는 직접적 요인으로, 메커니즘의 결과로 도출되는 중심 효과이다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 3.38,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

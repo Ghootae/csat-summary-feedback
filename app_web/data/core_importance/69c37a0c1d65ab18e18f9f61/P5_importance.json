@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "저항적 낙서 행위 → 다양한 방식 활용",
+      "importance_score": 0.8,
+      "normalized_score": 0.842,
+      "importance_role": "core_transition",
+      "reason": "문단의 변화 축에서 출발점과 예술적 기법 도입의 핵심 전환을 담당한다. 이후 모든 변화의 기반이 되는 중심 고리로, 결론에 직접 연결되는 핵심적 전환이다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "다양한 방식 활용 → 메시지 효과적 형상화",
+      "importance_score": 0.85,
+      "normalized_score": 0.894,
+      "importance_role": "main_mechanism",
+      "reason": "예술적 기법 도입이 메시지 전달의 효과를 높였음을 보여주는 핵심 메커니즘이다. 변화의 과정과 결과를 연결하며, 결론(공공 예술로 인정)로 나아가는 필수 고리이다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "메시지 효과적 형상화 → 공공 예술로 인정",
+      "importance_score": 0.95,
+      "normalized_score": 1.0,
+      "importance_role": "conclusion",
+      "reason": "문단의 최종 귀결이자 결론 역할을 담당한다. 이 slot이 빠지면 문단의 중심 의의가 무너질 정도로 결정적이다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.6,
+    "max_score": 0.95,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

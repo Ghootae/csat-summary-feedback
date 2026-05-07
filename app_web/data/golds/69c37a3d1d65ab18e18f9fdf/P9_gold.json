@@ -1,0 +1,52 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P9",
+  "para_order": 9,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "기능적 사고 → 세계 이해 방식",
+        "source_items": [
+          "기능적 사고 → 세계 이해 방식"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "기능적 사고 → 역할 중심 관계 위계화",
+        "source_items": [
+          "기능적 사고 → 역할 중심 관계 위계화"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "역할 체계화 → 원활한 행정 업무 수행",
+        "source_items": [
+          "역할 체계화 → 원활한 행정 업무 수행"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "관료제 문화 예시",
+        "source_items": [
+          "관료제 문화 예시"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

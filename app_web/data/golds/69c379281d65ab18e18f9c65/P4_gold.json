@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P4",
+  "para_order": 4,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "슬라이딩 방식 접촉 → 접촉 면적 변화",
+        "source_items": [
+          "슬라이딩 방식 접촉 → 접촉 면적 변화"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "접촉 면적 변화 → 전위차 발생",
+        "source_items": [
+          "접촉 면적 변화 → 전위차 발생"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "전위차 발생 → 전자의 이동(전류 발생)",
+        "source_items": [
+          "전위차 발생 → 전자의 이동(전류 발생)"
+        ]
+      },
+      {
+        "slot_id": "C4",
+        "text": "접촉 면적 증가 → 전류 방향 반전",
+        "source_items": [
+          "접촉 면적 증가 시 전류 방향 반전"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "전자 친화도가 다른 두 물질의 접촉 = 표면 전하 형성",
+        "source_items": [
+          "전자 친화도가 다른 두 물질의 접촉에 의해 표면 전하가 형성됨"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

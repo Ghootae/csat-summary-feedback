@@ -1,0 +1,40 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P5",
+  "para_order": 5,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "유효 접촉 면적 확대 → 실제 접촉점 증가",
+      "importance_score": 0.85,
+      "normalized_score": 0.944,
+      "importance_role": "main_mechanism",
+      "reason": "이 slot은 문단의 중심인 '성능 향상 조건'에서 구체적 실현 방식을 담당하며, 유효 접촉 면적 확대가 실제 접촉점 증가로 이어지는 핵심 메커니즘을 설명한다. 성능 향상이라는 결론에 도달하기 위한 필수적 고리로, 문단의 중심 흐름을 유지하는 데 매우 중요하다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "실제 접촉점 증가 → 마찰 전기 나노 발전기 성능 향상",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "conclusion",
+      "reason": "이 slot은 문단의 최종 귀결로, 실제 접촉점 증가가 마찰 전기 나노 발전기 성능 향상의 직접적 원인임을 밝힌다. 문단의 결론 및 평가 역할을 하며, 이 관계가 빠지면 문단의 중심 역할이 크게 훼손된다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 1.75,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

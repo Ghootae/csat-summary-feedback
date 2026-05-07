@@ -1,0 +1,66 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P6",
+  "para_order": 6,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "ATP/크레아틴 인산 저장 → 초기 에너지 공급",
+        "source_items": [
+          "근육 세포에 저장된 ATP와 크레아틴 인산 → 초기 에너지 공급"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "산소 공급 → 포도당/지방산 분해 → 추가 ATP 생산",
+        "source_items": [
+          "호흡을 통한 산소 공급 → 포도당/지방산 분해 → 추가 ATP 생산"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "산소 부족 → ATP 생산 저하/젖산 발생 → 근육 피로",
+        "source_items": [
+          "산소 부족 → ATP 생산 효율 저하 및 젖산 발생 → 근육 피로"
+        ]
+      },
+      {
+        "slot_id": "C4",
+        "text": "운동 후 ATP/크레아틴 인산 재합성·젖산 분해 → 산소 필요",
+        "source_items": [
+          "운동 후 ATP/크레아틴 인산 재합성 및 젖산 분해 → 산소 필요"
+        ]
+      },
+      {
+        "slot_id": "C5",
+        "text": "에너지 공급 과정 → 운동 중·후 호흡 변화",
+        "source_items": [
+          "에너지 공급 과정 → 운동 중·후 호흡 변화(숨 가쁨, 숨 몰아쉬기)"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "ATP/크레아틴 인산 저장량 = 소량",
+        "source_items": [
+          "ATP와 크레아틴 인산의 저장량이 소량임"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

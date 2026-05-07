@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379281d65ab18e18f9c65",
+  "para_id": "P2",
+  "para_order": 2,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "수직 접촉-분리 방식 → 전자 친화도 차이",
+        "source_items": [
+          "수직 접촉-분리 방식 = 두 물질이 수직으로 접촉하고 분리되는 움직임 반복"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "전자 친화도 차이 → 전자 이동(B→A)",
+        "source_items": [
+          "전자 친화도 차이 → 접촉면을 통한 전자 이동(B→A)"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "전자 이동(B→A) → 접촉면에 반대 부호 표면 전하 형성",
+        "source_items": [
+          "전자 이동(B→A) → 접촉면에 반대 부호 표면 전하 형성"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "작동 전 A와 B는 전기적으로 중성, 전위차 없음",
+        "source_items": [
+          "작동 전 A와 B는 전기적으로 중성, 전위차 없음"
+        ]
+      },
+      {
+        "slot_id": "O2",
+        "text": "형성된 (+)전하와 (-)전하의 양은 같고, 전하 분포는 평형",
+        "source_items": [
+          "형성된 (+)전하와 (-)전하의 양은 같고, 전하 분포는 평형"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P4",
+  "para_order": 4,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "근육 원섬유 = 골격근 수축의 구조적 단위",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "topic_anchor",
+      "reason": "문단의 중심 대상이자, 이후 모든 구조 설명의 출발점이 되는 핵심 구조적 단위임. 골격근 수축의 구조적 기반을 제시하는 문단의 주제와 직결됨."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "근육 원섬유 → 액틴 필라멘트/마이오신 필라멘트로 구성",
+      "importance_score": 0.85,
+      "normalized_score": 0.944,
+      "importance_role": "definition_core",
+      "reason": "근육 원섬유의 내부 구조(두 필라멘트의 존재와 배열)가 수축 원리 이해의 핵심 전제임. 구조 제시 문단에서 가장 중요한 정의적 연결 고리임."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "명대 = 액틴 필라멘트만 있는 구간",
+      "importance_score": 0.7,
+      "normalized_score": 0.778,
+      "importance_role": "supporting_core",
+      "reason": "구조 구분의 세부 핵심으로, 명대/암대의 구분이 필라멘트 배열의 이해에 필요함. 다만 C1, C2에 비해 상대적으로 보조적임."
+    },
+    {
+      "slot_id": "C4",
+      "core_text": "암대 = 마이오신 필라멘트가 있는 구간",
+      "importance_score": 0.7,
+      "normalized_score": 0.778,
+      "importance_role": "supporting_core",
+      "reason": "명대와 짝을 이루는 구조 구분으로, 필라멘트 배열의 이해에 필요함. 중심 구조의 세부 구분 역할."
+    },
+    {
+      "slot_id": "C5",
+      "core_text": "H대 = 암대 중 마이오신 필라멘트만 있는 구간",
+      "importance_score": 0.65,
+      "normalized_score": 0.722,
+      "importance_role": "supporting_core",
+      "reason": "암대 내의 추가적 세부 구분으로, 수축 메커니즘 설명의 기반이 되나, 명대/암대보다는 상대적으로 보조적임."
+    },
+    {
+      "slot_id": "C6",
+      "core_text": "Z선 = 액틴 필라멘트를 이어 주는 선 / 근육 원섬유 마디 = Z선과 Z선 사이",
+      "importance_score": 0.8,
+      "normalized_score": 0.889,
+      "importance_role": "definition_core",
+      "reason": "근육 원섬유의 기본 단위와 경계를 정의하는 핵심 구조로, 구조적 기반을 완성하는 역할. 수축 단위의 경계 설정이 문단의 중심 흐름에 매우 중요함."
+    }
+  ],
+  "normalization": {
+    "sum_score": 4.6,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

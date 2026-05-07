@@ -1,0 +1,64 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P4",
+  "para_order": 4,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "E × T = C",
+      "importance_score": 0.95,
+      "normalized_score": 1.0,
+      "importance_role": "main_mechanism",
+      "reason": "화이트 이론의 문화 발전 원리를 공식화한 핵심 공식으로, 이 문단의 중심 역할(원리 설명)을 성립시키는 최상위 고리임. 이 slot이 빠지면 문단의 핵심 역할이 무너짐."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "E = 1인당 연간 동력화한 에너지의 양",
+      "importance_score": 0.8,
+      "normalized_score": 0.842,
+      "importance_role": "definition_core",
+      "reason": "공식의 각 요소가 무엇을 의미하는지 명확히 하여, 공식의 해석과 적용을 가능하게 하는 필수 정보임. 공식 자체보다는 한 단계 아래지만, 중심 정의로서 중요도가 높음."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "T = 에너지를 이용하는 기술적 체계의 효율성",
+      "importance_score": 0.8,
+      "normalized_score": 0.842,
+      "importance_role": "definition_core",
+      "reason": "공식의 각 요소가 무엇을 의미하는지 명확히 하여, 공식의 해석과 적용을 가능하게 하는 필수 정보임. 공식 자체보다는 한 단계 아래지만, 중심 정의로서 중요도가 높음."
+    },
+    {
+      "slot_id": "C4",
+      "core_text": "C = 문화 발전의 정도",
+      "importance_score": 0.8,
+      "normalized_score": 0.842,
+      "importance_role": "definition_core",
+      "reason": "공식의 각 요소가 무엇을 의미하는지 명확히 하여, 공식의 해석과 적용을 가능하게 하는 필수 정보임. 공식 자체보다는 한 단계 아래지만, 중심 정의로서 중요도가 높음."
+    },
+    {
+      "slot_id": "C5",
+      "core_text": "기술적 체계 고도화 → E·T 상승 → 문화 발전",
+      "importance_score": 0.88,
+      "normalized_score": 0.926,
+      "importance_role": "main_mechanism",
+      "reason": "공식이 실제로 어떻게 작동하는지(실현 메커니즘)를 설명하는 핵심 고리로, 공식 자체와 함께 문단의 중심 역할을 담당함. 결론적 메커니즘으로서 매우 높은 중요도를 가짐."
+    }
+  ],
+  "normalization": {
+    "sum_score": 4.23,
+    "max_score": 0.95,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

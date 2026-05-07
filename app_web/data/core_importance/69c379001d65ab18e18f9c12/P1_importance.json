@@ -1,0 +1,40 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379001d65ab18e18f9c12",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "물품 매매 계약 이행 중 책임 없는 손해 발생 → 위험 부담 문제 발생",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "topic_anchor",
+      "reason": "이 slot은 문단의 문제 제기이자 중심 대상(위험 부담 문제)의 발생 조건을 명확히 제시하여, 문단 전체의 논의 출발점이자 중심축 역할을 한다. 이 관계가 빠지면 문단의 도입/문제 제기 역할이 무너진다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "국내(민법)/국제(CISG) → 위험 부담 기준 존재",
+      "importance_score": 0.8,
+      "normalized_score": 0.89,
+      "importance_role": "definition_core",
+      "reason": "이 slot은 위험 부담 문제가 국내외 모두에서 기준이 존재함을 밝히며, 국제적 논의의 필요성과 방향성을 제시한다. 문단의 중심 역할(문제 제기 및 기준 존재 제시)에서 핵심 메커니즘은 아니지만, 반드시 보존되어야 할 중심 정의/구조이다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 1.7,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

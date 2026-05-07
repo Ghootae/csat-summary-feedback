@@ -1,0 +1,39 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c379ca2b1d79e62e2e2a6e",
+  "para_id": "P3",
+  "para_order": 3,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "1종/2종/3종 지레 구조 차이 → 골격근 수축 → 관절 중심 작용점 이동",
+        "source_items": [
+          "1종/2종/3종 지레의 구조 차이",
+          "골격근 수축 → 관절을 중심으로 작용점 이동"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "각 지레 유형별 인체 부위 예시",
+        "source_items": [
+          "각 지레 유형별 인체 부위 예시(목, 종아리, 이두근 등)"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

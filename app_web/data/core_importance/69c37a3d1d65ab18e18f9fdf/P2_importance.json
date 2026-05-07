@@ -1,0 +1,48 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P2",
+  "para_order": 2,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "기술적 체계 변화 → 사회적 체계 변화",
+      "importance_score": 0.88,
+      "normalized_score": 0.978,
+      "importance_role": "main_mechanism",
+      "reason": "화이트 이론의 문화 발전 구조에서 기술적 체계 변화가 사회적 체계 변화를 유발하는 핵심 메커니즘으로, 전체 변화 연쇄의 출발점이자 구조적 중심 고리이다. 이 고리가 빠지면 이후 변화 구조가 성립하지 않는다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "사회적 체계 변화 → 관념적 체계 변화",
+      "importance_score": 0.86,
+      "normalized_score": 0.956,
+      "importance_role": "main_mechanism",
+      "reason": "사회적 체계 변화가 관념적 체계 변화로 이어지는 연쇄는 화이트 이론의 구조적 설명에서 필수적인 연결 고리로, 문화 발전의 단계적 과정을 설명하는 데 반드시 보존되어야 한다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "관념적 체계 변화 → 문화 발전",
+      "importance_score": 0.9,
+      "normalized_score": 1.0,
+      "importance_role": "conclusion",
+      "reason": "관념적 체계 변화가 문화 발전으로 이어진다는 것은 이 문단의 최종 귀결이자 결론 역할을 하며, 전체 변화 구조의 완성 단계로서 문단의 중심 역할을 한다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 2.64,
+    "max_score": 0.9,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

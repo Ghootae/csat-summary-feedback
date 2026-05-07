@@ -1,0 +1,52 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a3d1d65ab18e18f9fdf",
+  "para_id": "P1",
+  "para_order": 1,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "환경 적응 필요 → 문화 창출",
+        "source_items": [
+          "인간의 환경 적응 필요 → 문화 창출(체계)"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "문화 → 기술적/사회적/관념적 체계",
+        "source_items": [
+          "문화 → 기술적/사회적/관념적 체계로 세분화"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "문화의 층위 세분화 → 문화 발전 원리 설명",
+        "source_items": [
+          "문화의 층위 세분화 → 문화 발전 원리 설명"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "신체적 능력만으로는 환경 극복 어려움",
+        "source_items": [
+          "인간의 신체적 능력만으로는 환경의 제약 극복이 어려움"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P3",
+  "para_order": 3,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "사회적 메시지 도입 목적 → 다양한 예술 기법 도입",
+      "importance_score": 0.9,
+      "normalized_score": 0.947,
+      "importance_role": "core_transition",
+      "reason": "문단의 중심 전환점이자, 예술적 기법 도입의 목적과 그 실행을 연결하는 핵심 고리로서 문단 전체 구조의 출발점이 됨. 이 slot이 빠지면 문단의 중심 논리(왜 기법을 도입했는가)가 무너짐."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "스텐실 기법 도입 → 정교한 형상 표현",
+      "importance_score": 0.8,
+      "normalized_score": 0.842,
+      "importance_role": "main_mechanism",
+      "reason": "예술적 기법 도입의 구체적 방식이자, 변화의 핵심 사례로서 중심축을 구성함. 스텐실 기법이 구체적으로 어떻게 예술성 향상에 기여하는지 설명하는 필수 메커니즘."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "정교한 형상 표현 → 예술성·메시지 전달력 향상",
+      "importance_score": 0.95,
+      "normalized_score": 1.0,
+      "importance_role": "main_effect",
+      "reason": "문단의 최종 귀결이자, 예술적 기법 도입의 직접적 효과로서 문단의 결론적 역할을 담당함. 예술성과 메시지 전달력 향상이 없으면 문단의 중심 논리가 성립하지 않음."
+    },
+    {
+      "slot_id": "C4",
+      "core_text": "작업 장소 고려 및 사전 준비 → 작업 속도 향상",
+      "importance_score": 0.7,
+      "normalized_score": 0.737,
+      "importance_role": "main_effect",
+      "reason": "예술적 기법 도입의 또 다른 효과로서, 작업 효율성 증대가 문단의 주요 귀결 중 하나임. 다만 예술성·메시지 전달력에 비해 상대적으로 부차적이므로 점수를 다소 낮게 부여함."
+    }
+  ],
+  "normalization": {
+    "sum_score": 3.35,
+    "max_score": 0.95,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}

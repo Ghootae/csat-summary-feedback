@@ -1,0 +1,80 @@
+{
+  "schema_version": "gold_from_anchor_v1",
+  "passage_id": "69c37a0c1d65ab18e18f9f61",
+  "para_id": "P2",
+  "para_order": 2,
+  "language": "ko",
+  "gold": {
+    "core_slots": [
+      {
+        "slot_id": "C1",
+        "text": "태그 중심 그라피티 → 조형적 복잡화/화려함",
+        "source_items": [
+          "태그 중심의 그라피티가 조형적으로 복잡하고 화려하게 변화함"
+        ]
+      },
+      {
+        "slot_id": "C2",
+        "text": "글자: 읽는 대상 → 보는 대상으로 전환",
+        "source_items": [
+          "글자가 읽는 대상에서 보는 대상으로 전환됨"
+        ]
+      },
+      {
+        "slot_id": "C3",
+        "text": "복잡화된 태그 → 대중 인식 한계",
+        "source_items": [
+          "복잡화된 태그로 인해 대중이 의미를 인식하기 어려워짐"
+        ]
+      },
+      {
+        "slot_id": "C4",
+        "text": "단순 태그 행위 → 비평가의 비판",
+        "source_items": [
+          "비평가들이 단순한 태그 행위의 한계를 비판함"
+        ]
+      },
+      {
+        "slot_id": "C5",
+        "text": "비평가의 비판 → '비가시적, 텅 빈' 평가",
+        "source_items": [
+          "그라피티가 '비가시적일 뿐만 아니라, 텅 비었다'는 평가를 받음"
+        ]
+      }
+    ],
+    "optional_slots": [
+      {
+        "slot_id": "O1",
+        "text": "그라피티: 1970년대 태그로 시작",
+        "source_items": [
+          "1970년대에 유행했던 그라피티는 주로 자신의 이름이나 별명을 적는 '태그'로 시작됨"
+        ]
+      },
+      {
+        "slot_id": "O2",
+        "text": "기존 태그 위에 덧그림",
+        "source_items": [
+          "태그를 돋보이게 하기 위해 기존 태그 위에 덧대어 더 크게 그림"
+        ]
+      },
+      {
+        "slot_id": "O3",
+        "text": "그라피티 행위의 저항적 성격 지속",
+        "source_items": [
+          "그라피티를 그리는 행위 자체는 여전히 저항적 성격을 지님"
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "source": "paragraph_anchor",
+    "problem_independent": true,
+    "avoid": [
+      "문항 기반 선별",
+      "문장 요약",
+      "원문 재서술",
+      "배경지식",
+      "과도한 세부 정보"
+    ]
+  }
+}

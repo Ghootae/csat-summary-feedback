@@ -1,0 +1,56 @@
+{
+  "schema_version": "core_importance_v1",
+  "passage_id": "69c379001d65ab18e18f9c12",
+  "para_id": "P3",
+  "para_order": 3,
+  "language": "ko",
+  "core_importance": [
+    {
+      "slot_id": "C1",
+      "core_text": "운송 포함/운송인 특정 장소 미지정 → 최초 운송인 인도 시 위험 이전",
+      "importance_score": 0.87,
+      "normalized_score": 0.977,
+      "importance_role": "classification_basis",
+      "reason": "계약 유형별 위험 이전 시점 구조에서 가장 대표적이고 빈도가 높은 기준으로, 구조 제시 문단의 중심 고리 중 하나이다. 이 기준이 빠지면 전체 구조의 이해가 크게 저해된다."
+    },
+    {
+      "slot_id": "C2",
+      "core_text": "운송 포함/운송인 특정 장소 지정 → 해당 장소 인도 시 위험 이전",
+      "importance_score": 0.89,
+      "normalized_score": 1.0,
+      "importance_role": "classification_basis",
+      "reason": "계약 유형별 구조에서 첫 번째 slot과 쌍을 이루는 핵심 분류 기준이다. 운송 포함 계약 내에서 장소 지정 여부에 따라 구조가 달라지는 핵심 전환점이므로 가장 높은 중요도를 부여한다."
+    },
+    {
+      "slot_id": "C3",
+      "core_text": "운송 미포함/매수인 영업소 수령 → 수령 시 위험 이전",
+      "importance_score": 0.78,
+      "normalized_score": 0.876,
+      "importance_role": "classification_basis",
+      "reason": "운송이 포함되지 않은 계약 유형에서 위험 이전 시점을 결정하는 독립적 기준으로, 구조의 필수 고리이나 운송 포함 유형에 비해 상대적으로 빈도가 낮아 약간 낮은 점수를 부여한다."
+    },
+    {
+      "slot_id": "C4",
+      "core_text": "운송 중 매매/특정 물품 → 계약 체결 시 위험 이전",
+      "importance_score": 0.68,
+      "normalized_score": 0.764,
+      "importance_role": "classification_basis",
+      "reason": "특수 유형(운송 중 매매)에 해당하는 구조적 기준으로, 전체 구조의 완결성을 위해 필요하지만 일반적 유형에 비해 상대적으로 보조적이다."
+    }
+  ],
+  "normalization": {
+    "sum_score": 3.22,
+    "max_score": 0.89,
+    "method": "normalized_score = importance_score / max_score"
+  },
+  "notes": {
+    "source": "paragraph_anchor + gold",
+    "problem_independent": true,
+    "does_not_modify_gold": true,
+    "use_for": [
+      "reward_weighting",
+      "target_slot_selection",
+      "learning_log_analysis"
+    ]
+  }
+}
