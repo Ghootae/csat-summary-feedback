@@ -1,0 +1,27 @@
+# environment
+.env
+.env.local
+app_web/.env.local
+
+# node
+node_modules/
+.next/
+out/
+dist/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# logs
+*.log
+
+# large / temporary data
+tmp/
+outputs/
+research_pipeline/replit_archived/Korean-Passage-CoachV03/
